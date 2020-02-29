@@ -8,8 +8,9 @@ import { Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, EventSet
 function MySyncfusionCalendar(){
   return (
     <div>
-    'hi'
-  
+      <ScheduleComponent className='schedule'>
+        <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+      </ScheduleComponent>
   </div>
 )
 }
