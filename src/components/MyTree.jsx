@@ -4,12 +4,15 @@ import './MyTree.css';
 
 function MyTree(){
   return(
-    <div className='treeLeaves'>
-      <div className='trunk'>
-      <div className='leftBranch'></div>
+    <div>
+      <div className='ground'>  </div>
+        <div className='treeLeaves'>
+          <div className='trunk'>
+            <div className='leftBranch'></div>
+          </div>
+
+        </div>
       </div>
-    </div>
-    // <p>hi</p>
   );
 }
 
