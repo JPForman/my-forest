@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import LeftNav from './LeftNav';
 import Logo from './Logo';
-import RightNav from './RightNav';
+// import RightNav from './RightNav';
 import './Header.css';
 
 function Header(){
@@ -18,7 +18,7 @@ function Header(){
       </div>
 
       <div className='rightNav'>
-        <RightNav />
+
       </div>
     </div>
     </div>

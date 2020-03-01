@@ -1,5 +1,6 @@
 import React from 'react';
 import MyTree from './MyTree';
+import TreeSet from './TreeSet';
 import './YearForest.css';
 
 
@@ -8,7 +9,7 @@ function YearForest(){
     <div className='sky'>
     <div className='sun'>    </div>
     <div className='ground'>  </div>
-    <MyTree className='tree'/>
+    <TreeSet />
 
     </div>
 
