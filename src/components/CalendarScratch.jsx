@@ -40,7 +40,6 @@ export default class CalendarScratch extends React.Component {
       showCalendarTable: !this.state.showCalendarTable
     });
   };
-
   setMonth = month => {
     let monthNo = this.state.allmonths.indexOf(month);
     let dateObject = Object.assign({}, this.state.dateObject);
@@ -51,7 +50,6 @@ export default class CalendarScratch extends React.Component {
       showCalendarTable: !this.state.showCalendarTable
     });
   };
-
   MonthList = props => {
     let months = [];
     props.data.map(data => {
@@ -191,7 +189,7 @@ export default class CalendarScratch extends React.Component {
       <table className="calendar-month">
         <thead>
           <tr>
-            <th colSpan="4">Select a Yeah</th>
+            <th colSpan="4">Select a Year</th>
           </tr>
         </thead>
         <tbody>{yearlist}</tbody>
@@ -208,7 +206,6 @@ export default class CalendarScratch extends React.Component {
       }
     );
   };
-
   render() {
     let weekdayshortname = this.weekdayshort.map(day => {
       return <th key={day}>{day}</th>;
@@ -262,14 +259,14 @@ export default class CalendarScratch extends React.Component {
             onClick={e => {
               this.onPrev();
             }}
-            class="calendar-button button-prev"
+            className="calendar-button button-prev"
           />
           {!this.state.showMonthTable && !this.state.showYearEditor && (
             <span
               onClick={e => {
                 this.showMonth();
               }}
-              class="calendar-label"
+              className="calendar-label"
             >
               {this.month()},
             </span>
