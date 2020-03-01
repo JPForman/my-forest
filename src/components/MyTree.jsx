@@ -5,7 +5,7 @@ import './MyTree.css';
 function MyTree(){
   return(
     <div>
-      <div className='ground'>  </div>
+
         <div className='treeLeaves'>
           <div className='trunk'>
             <div className='leftBranch'></div>
