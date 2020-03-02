@@ -6,6 +6,7 @@ import MyTree from './MyTree';
 import MySyncfusionCalendar from './MySyncfusionCalendar';
 import CalendarScratch from './CalendarScratch';
 import YearForest from './YearForest';
+import HabitForm from './HabitForm';
 
 
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
       <div>
         <YearForest />
         <CalendarScratch />
+        <HabitForm />
 
       </div>
     );

@@ -1,0 +1,13 @@
+.habitForm {
+  width: 243px;
+  height: 300px;
+  position: absolute;
+  right: 6%;
+  top: 45%;
+  margin-right: 2px;
+  border: 2px solid black;
+  background-color: #c7846b;
+  opacity: .5;
+  text-align: center;
+  border-radius: 3%;
+}

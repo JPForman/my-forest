@@ -4,3 +4,9 @@
   position: relative;
   top: -200px;
 }
+
+.treeButton {
+  position: absolute;
+  left: 80%;
+  top: 10%;
+}
