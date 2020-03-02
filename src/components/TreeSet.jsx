@@ -7,14 +7,14 @@ class TreeSet extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      treeSet: [1,2,3]
+      treeSet: []
     }
     this.addNewTreeToList = this.addNewTreeToList.bind(this)
   }
 
-  addNewTreeToList(tree){
+  addNewTreeToList(){
     let newTreeSet = this.state.treeSet.slice()
-    newTreeSet.push(tree)
+    newTreeSet.push(1)
     this.setState({treeSet: newTreeSet})
   }
 
@@ -23,6 +23,7 @@ class TreeSet extends React.Component{
   render() {
     return(
       <div>
+      <button onClick={this.addNewTreeToList}>Add a tree?</button>
       <p>hi class treeSet</p>
          {this.state.treeSet.map((value, index) => {
              return <MyTree />}
