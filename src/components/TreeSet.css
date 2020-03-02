@@ -1,9 +1,6 @@
-.treeSet {
-  position: absolute;
-  /* left: 20%; */
-  border: 2px solid black;
-}
-
-.hi {
-  color: red;
+.tree {
+  transform: scale(0.5);
+  float: left;
+  position: relative;
+  top: -200px;
 }
