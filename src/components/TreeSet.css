@@ -1,8 +1,13 @@
 .tree {
-  transform: scale(0.5);
+  /* transform: scale(0.5);
   float: left;
-  position: relative;
-  top: -200px;
+  position: relative; */
+
+  top: -45%;
+  position: absolute;
+  left: 18.3%;
+
+
 }
 
 .treeButton {

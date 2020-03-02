@@ -17,7 +17,6 @@ class App extends React.Component {
         <YearForest />
         <CalendarScratch />
         <HabitForm />
-
       </div>
     );
   }

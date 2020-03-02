@@ -47,7 +47,6 @@ export default class CalendarScratch extends React.Component {
     dateObject = moment(dateObject).set("month", monthNo);
     this.setState({
       dateObject: dateObject,
-      selectedMonth: monthNo,
       showMonthTable: !this.state.showMonthTable,
       showCalendarTable: !this.state.showCalendarTable
     });
@@ -204,8 +203,8 @@ export default class CalendarScratch extends React.Component {
         selectedDay: d
       },
       () => {
-        console.log("SELECTED DAY: ", this.state.selectedDay);
-        console.log("month: ", this.state.selectedMonth);
+        console.log("Selected Day: ", this.state.selectedDay);
+        console.log("Selected Month: ", this.month());
       }
     );
   };
