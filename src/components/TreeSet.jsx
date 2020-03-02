@@ -24,7 +24,6 @@ class TreeSet extends React.Component{
     return(
       <div>
       <button onClick={this.addNewTreeToList}>Add a tree?</button>
-      <p>hi class treeSet</p>
          {this.state.treeSet.map((value, index) => {
              return <MyTree />}
       )}
