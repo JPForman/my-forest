@@ -1,6 +1,7 @@
 export default (state = {}, action) => {
   switch (action.type) {
     case 'ADD_HABITS':
+    console.log('ADD HABITS case');
       const { tree, id } = action;
       let newState = Object.assign({}, state, {
         [id]: {
@@ -8,7 +9,7 @@ export default (state = {}, action) => {
           tree: tree
         }
       });
-      console.log("new state = " + newState);
+      console.log("new state = " , newState);
 
       return newState
     default:
