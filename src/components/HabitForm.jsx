@@ -1,23 +1,41 @@
-import React from 'react';
-import './HabitForm.css';
-import { Button } from 'reactstrap';
-
+import React, { useState } from 'react';
+// import './HabitForm.css';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import CalendarReact from './CalendarReact';
 
 
 
 function HabitForm(props){
-  return(
+  const {
+    buttonLabel = 'button label',
+    className = 'class name',
+    modalTitle = ''
+    } = props;
 
-    <div className="habitForm">
-      <h3>March 4, 2020</h3>
-      <div>
-        <h4>Add a tree for today:</h4>
-        <Button color="primary">primary</Button>{' '}
-        <Button color="secondary">secondary</Button>{' '}
-      </div>
+  const [modal, setModal] = useState(false);
+
+  function toggle(props) {
+  console.log('toggled');
+  console.log('props inside toggle: ', props);
+  let modalTitle = ''
+  setModal(!modal);
+ }
+
+  return (
+    <div>
+    <CalendarReact toggle={toggle}/>
+    <Modal isOpen={modal} toggle={toggle} className={className}>
+      <ModalHeader toggle={toggle}>{modalTitle}</ModalHeader>
+      <ModalBody>
+        What did you do today?
+      </ModalBody>
+      <ModalFooter>
+        <Button color="primary" onClick={toggle}>Tree Me!</Button>{' '}
+        <Button color="secondary" onClick={toggle}>Flower power :)</Button>
+      </ModalFooter>
+    </Modal>
     </div>
-          
-    )
-  }
+  );
+}
 
-  export default HabitForm;
+export default HabitForm;

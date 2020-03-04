@@ -1,5 +1,5 @@
 {
-  "name": "ganesha-Kombucha",
+  "name": "myForest",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,7 @@
     "moment-range": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
+    "react-calendar": "^2.19.2",
     "react-dom": "^16.13.0",
     "react-moment": "^0.9.7",
     "react-router-dom": "^4.3.1",

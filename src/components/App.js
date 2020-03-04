@@ -7,6 +7,7 @@ import MySyncfusionCalendar from './MySyncfusionCalendar';
 import CalendarScratch from './CalendarScratch';
 import YearForest from './YearForest';
 import HabitForm from './HabitForm';
+import CalendarReact from './CalendarReact';
 
 
 class App extends React.Component {
@@ -15,7 +16,7 @@ class App extends React.Component {
     return (
       <div>
         <YearForest />
-        <CalendarScratch />
+
         <HabitForm />
       </div>
     );
@@ -29,3 +30,6 @@ export default App;
 // My Possible Components
 
 // <MySyncfusionCalendar />
+// <CalendarScratch />
+  // <CalendarReact />
+        // <CalendarReact />
