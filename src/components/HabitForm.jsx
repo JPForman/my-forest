@@ -32,23 +32,33 @@ function HabitForm(props){
     setCSelected([...cSelected]);
   }
 
+  function handleSayHi(event) {
+    console.log('say hi hi');
+    console.log('cSelected: ', cSelected);
+  }
+
   return (
     <div>
     <CalendarReact toggle={toggle}/>
     <Modal isOpen={modal} toggle={toggle} className={className}>
       <ModalHeader toggle={toggle}>{dateTitle}</ModalHeader>
       <ModalBody>
-        What did you do today?
+        Todaysies
       </ModalBody>
       <ModalFooter>
-
-        <h5>Checkbox Buttons</h5>
+            <form onSubmit={handleSayHi}>
              <ButtonGroup>
-               <Button color="primary" onClick={() => onCheckboxBtnClick(1)} active={cSelected.includes(1)}>Add a tree :)</Button>
-               <Button color="primary" onClick={() => onCheckboxBtnClick(2)} active={cSelected.includes(2)}>Flower Me</Button>
-               <Button color="primary" onClick={() => onCheckboxBtnClick(3)} active={cSelected.includes(3)}>Grass</Button>
+               <Button color="primary" onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
+               <Button color="primary" onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
+               <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
              </ButtonGroup>
-             <p>Selected: {JSON.stringify(cSelected)}</p>
+             <button type='submit'>true</button>
+           </form>
+             <h5>{cSelected[0]}</h5>
+
+             <h5>{cSelected[1]}</h5>
+
+             <h5>{cSelected[2]}</h5>
 
       </ModalFooter>
     </Modal>

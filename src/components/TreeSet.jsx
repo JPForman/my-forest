@@ -18,8 +18,6 @@ class TreeSet extends React.Component{
     this.setState({treeSet: newTreeSet})
   }
 
-
-
   render() {
     return(
       <div>
