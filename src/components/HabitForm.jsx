@@ -12,20 +12,13 @@ function HabitForm(props){
     } = props;
 
   const [modal, setModal] = useState(false);
-  const [modalTitle, setModalTitle] = useState('')
+  const [dateTitle, setDateTitle] = useState('');
 
   function toggle(value) {
-  console.log('toggled');
-  console.log('value', value);
-  console.log('modalTitle inside toggle pre setModalTitle: ', modalTitle);
-  dateTitle = value.toString();
-  console.log('dateTitle', dateTitle);
-  // setModalTitle(props);
-  console.log('modalTitle inside toggle post setModalTitle: ', modalTitle);
+  setDateTitle(`${value}`);
   setModal(!modal);
  }
 
- let dateTitle = '';
 
   return (
     <div>
