@@ -23,19 +23,18 @@ class TreeSet extends React.Component{
   render() {
     return(
       <div>
-      <button className='treeButton' onClick={this.addNewTreeToList}>Add a tree?</button>
-         {this.state.treeSet.map((value, index) => {
-             return (
-               <div className='tree' style={{
-                 left:`${1.2*index + Math.random()}%`, transform:`scale(${0.5}`,
-                top:`${-15 + 100*Math.random()}%`
-                  }} >
-                  <MyTree />
-               </div>
-
-           )
-           }
-      )}
+        <button className='treeButton' onClick={this.addNewTreeToList}>Add a tree?</button>
+        {this.state.treeSet.map((value, index) => {
+          return (
+            <div className='tree' style={{
+                left:`${1.2*index + Math.random()}%`, transform:`scale(${0.5}`,
+                  top:`${-15 + 100*Math.random()}%`
+                }} >
+                <MyTree />
+              </div>
+            )
+          }
+        )}
       </div>
     )
   }

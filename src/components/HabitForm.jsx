@@ -15,7 +15,8 @@ function HabitForm(props){
   const [dateTitle, setDateTitle] = useState('');
 
   function toggle(value) {
-  setDateTitle(`${value}`);
+    let datePartial = value.toString().slice(0,15)
+  setDateTitle(`${datePartial}`);
   setModal(!modal);
  }
 
