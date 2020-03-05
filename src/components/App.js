@@ -6,7 +6,7 @@ import MyTree from './MyTree';
 import MySyncfusionCalendar from './MySyncfusionCalendar';
 import CalendarScratch from './CalendarScratch';
 import YearForest from './YearForest';
-import HabitForm from './HabitForm';
+import HabitController from './HabitController';
 import CalendarReact from './CalendarReact';
 
 
@@ -17,7 +17,7 @@ class App extends React.Component {
       <div>
         <YearForest />
 
-        <HabitForm />
+        <HabitController />
       </div>
     );
   }

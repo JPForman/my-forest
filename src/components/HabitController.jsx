@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-// import './HabitForm.css';
-import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter } from 'reactstrap';
+// import './HabitController.css';
+import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 
 
 
-function HabitForm(props){
-  const {
-    buttonLabel = 'button label',
-    className = 'class name',
-    } = props;
+function HabitController(props){
 
+const [habitEventList, setHabitEventList] = useState([]);
+
+// Modal Stuff
   const [modal, setModal] = useState(false);
   const [dateTitle, setDateTitle] = useState('');
 
@@ -20,6 +19,7 @@ function HabitForm(props){
     setModal(!modal);
    }
 
+// Checkbox Form Stuff
  const [cSelected, setCSelected] = useState([]);
 
  const onCheckboxBtnClick = (selected) => {
@@ -32,28 +32,32 @@ function HabitForm(props){
     setCSelected([...cSelected]);
   }
 
-  function handleSayHi(event) {
-    console.log('say hi hi');
-    console.log('cSelected: ', cSelected);
+  function handleAddHabitEvent(event) {
+    event.preventDefault();
+    let newHabit = {
+      date: dateTitle
+    }
+    setHabitEventList(habitEventList => [...habitEventList, newHabit]);
+    setModal(!modal);
   }
 
   return (
     <div>
     <CalendarReact toggle={toggle}/>
-    <Modal isOpen={modal} toggle={toggle} className={className}>
+    <Modal isOpen={modal} toggle={toggle} >
       <ModalHeader toggle={toggle}>{dateTitle}</ModalHeader>
       <ModalBody>
         Todaysies
       </ModalBody>
       <ModalFooter>
-            <form onSubmit={handleSayHi}>
+            <Form onSubmit={handleAddHabitEvent}>
              <ButtonGroup>
                <Button color="primary" onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
                <Button color="primary" onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
                <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
              </ButtonGroup>
              <button type='submit'>true</button>
-           </form>
+           </Form>
              <h5>{cSelected[0]}</h5>
 
              <h5>{cSelected[1]}</h5>
@@ -66,4 +70,4 @@ function HabitForm(props){
   );
 }
 
-export default HabitForm;
+export default HabitController;

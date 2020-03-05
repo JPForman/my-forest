@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import Calendar from 'react-calendar';
-import HabitForm from './HabitForm';
+import HabitController from './HabitController';
 import './CalendarReact.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
