@@ -18,14 +18,7 @@ export default class CalendarReact extends Component {
   onChange = date => this.setState({ date })
 
   dayClick(value, event, props) {
-    console.log('day click');
-    console.log('Clicked date: ', value);
-    console.log('State when clicked: ', this.state);
-    // console.log('VALUE date string when clicked: ', Date.value.toDateString());
-    console.log('Props when clicked: ', this.props)
-    console.log('Value when clicked: ', value)
     this.props.toggle(value);
-
   }
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import './HabitForm.css';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 
 
@@ -16,10 +16,21 @@ function HabitForm(props){
 
   function toggle(value) {
     let datePartial = value.toString().slice(0,15)
-  setDateTitle(`${datePartial}`);
-  setModal(!modal);
- }
+    setDateTitle(`${datePartial}`);
+    setModal(!modal);
+   }
 
+ const [cSelected, setCSelected] = useState([]);
+
+ const onCheckboxBtnClick = (selected) => {
+    const index = cSelected.indexOf(selected);
+    if (index < 0) {
+      cSelected.push(selected);
+    } else {
+      cSelected.splice(index, 1);
+    }
+    setCSelected([...cSelected]);
+  }
 
   return (
     <div>
@@ -30,8 +41,15 @@ function HabitForm(props){
         What did you do today?
       </ModalBody>
       <ModalFooter>
-        <Button color="primary" onClick={toggle}>Tree Me!</Button>{' '}
-        <Button color="secondary" onClick={toggle}>Flower power :)</Button>
+
+        <h5>Checkbox Buttons</h5>
+             <ButtonGroup>
+               <Button color="primary" onClick={() => onCheckboxBtnClick(1)} active={cSelected.includes(1)}>Add a tree :)</Button>
+               <Button color="primary" onClick={() => onCheckboxBtnClick(2)} active={cSelected.includes(2)}>Flower Me</Button>
+               <Button color="primary" onClick={() => onCheckboxBtnClick(3)} active={cSelected.includes(3)}>Grass</Button>
+             </ButtonGroup>
+             <p>Selected: {JSON.stringify(cSelected)}</p>
+
       </ModalFooter>
     </Modal>
     </div>
