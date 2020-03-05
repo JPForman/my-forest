@@ -34,8 +34,12 @@ const [habitEventList, setHabitEventList] = useState([]);
 
   function handleAddHabitEvent(event) {
     event.preventDefault();
+
     let newHabit = {
-      date: dateTitle
+      date: dateTitle,
+      tree: cSelected.includes('a tree'),
+      flower: cSelected.includes('a flower'),
+      grass: cSelected.includes('some grass'),
     }
     setHabitEventList(habitEventList => [...habitEventList, newHabit]);
     setModal(!modal);

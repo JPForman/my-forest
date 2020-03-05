@@ -26,7 +26,7 @@ class TreeSet extends React.Component{
           return (
             <div className='tree' style={{
                 left:`${1.2*index + Math.random()}%`, transform:`scale(${0.5}`,
-                  top:`${-15 + 100*Math.random()}%`
+                  bottom:`${30 + 100*Math.random()}%`
                 }} >
                 <MyTree />
               </div>
