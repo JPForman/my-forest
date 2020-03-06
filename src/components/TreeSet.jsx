@@ -11,20 +11,17 @@ function TreeSet(habitEventList){
 
         {habitEventList.habitEventList.habitEventList.map((value, index) => {
           if(value.tree){
-            let b=30 + 100*Math.random()
             return (
               <div className='tree' style={{
                 left:`${1.2*index + Math.random()}%`,
                 transform:`scale(${0.5})`,
-                bottom:`${b}%`,
-                zIndex: `${-b}`}}>
+                bottom:`${30 + 100*Math.random()}%`}}>
                   <MyTree />
               </div>
             )
           }
-
+          console.log('got past tree');
           if(value.grass){
-            console.log('need some grass');
             return(
               <div className='grass' style={{
                   left:`${1.2*index + Math.random()}%`,
