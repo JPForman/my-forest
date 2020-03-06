@@ -1,6 +1,24 @@
-.calendarReact {
+.hideCalendarButton {
+  border-color: transparent;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 535px solid transparent;
+  border-bottom: 130px solid lightgrey;
+  border-top-left-radius: 56%;
+  border-bottom-right-radius: 15%;
+  position: absolute;
+  right: 20%;
+  top: 20%;
+}
+
+.hideCalendarButton:hover {
+  border-bottom: 130px solid darkgrey;
 
 }
+
+
 
 .HabitController {
   width: 243px;

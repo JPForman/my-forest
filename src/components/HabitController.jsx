@@ -69,22 +69,17 @@ function HabitController(props){
   const [calendarDisplay, setCalendarDisplay] = useState('block');
 
   function hideCalendar() {
-    console.log('le click hideCalendar');
-    console.log('calendarDisplay start click: ', calendarDisplay);
     if (calendarDisplay === 'block') {
-      console.log('calendarDisplay true branch');
       setCalendarDisplay('none'); }
     else if(calendarDisplay === 'none') {
-      console.log('calendarDisplay none branch')
-      console.log('calendarDisplay pre set: ', calendarDisplay)
       setCalendarDisplay('block');
     }
-    console.log('calendarDisplay post set: ', calendarDisplay);
   }
 
-  console.log('calendarDisplay before return: ', calendarDisplay)
+
   return (
     <div>
+      <a className='hideCalendarButton' onClick={hideCalendar}></a>
       <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
         <CalendarReact toggle={toggle}/>
       </div>
@@ -110,10 +105,10 @@ function HabitController(props){
         </ModalFooter>
       </Modal>
       <YearForest habitEventList={habitEventList}/>
-      <TallySheet habitEventList={habitEventList}/>
-      <button onClick={hideCalendar}>click</button>
+
     </div>
   );
 }
 
 export default HabitController;
+// <TallySheet habitEventList={habitEventList}/>
