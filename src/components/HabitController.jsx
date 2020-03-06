@@ -66,17 +66,17 @@ function HabitController(props){
     setCSelected([]);
   }
 
-  const [calendarDisplay, setCalendarDisplay] = useState(true);
+  const [calendarDisplay, setCalendarDisplay] = useState('true');
 
   function hideCalendar() {
     console.log('le click hideCalendar');
-    if (calendarDisplay === true) {
+    if (calendarDisplay === 'true') {
       console.log('calendarDisplay true');
       setCalendarDisplay('none'); }
     else {
       console.log('calendarDisplay false branch')
       console.log('calendarDisplay pre set: ', calendarDisplay)
-      setCalendarDisplay(true);
+      setCalendarDisplay('true');
     }
     console.log('calendarDisplay post set: ', calendarDisplay)
   return;
