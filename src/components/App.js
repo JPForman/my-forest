@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import './App.css';
 import MyTree from './MyTree';
 // import YearForest from './YearForest';
 import HabitController from './HabitController';
@@ -12,7 +11,6 @@ class App extends React.Component {
   render(){
     return (
       <div>
-
 
         <HabitController />
       </div>

@@ -1,36 +1,42 @@
 import React from 'react';
 import MyTree from './MyTree';
+import Grass from './Grass';
 import './TreeSet.css';
+import grass from "./images/grass.png"
 
 function TreeSet(habitEventList){
-
-  console.log('TreeSetClass habitEventList:', habitEventList.habitEventList.habitEventList);
-
-  function addNewTreeToList(){
-    // let newTreeSet = this.state.treeSet.slice()
-    // newTreeSet.push(1)
-    // this.setState({treeSet: newTreeSet})
-    console.log('add new tree');
-  }
 
     return(
       <div>
 
         {habitEventList.habitEventList.habitEventList.map((value, index) => {
-          console.log("TreeList Map value: ", value);
           if(value.tree){
-          return (
-                <div className='tree' style={{left:`${1.2*index + Math.random()}%`, transform:`scale(${0.5})`, bottom:`${30 + 100*Math.random()}%`}}>
-                    <MyTree />
-                </div>
-            )}
-          })}
+            let b=30 + 100*Math.random()
+            return (
+              <div className='tree' style={{
+                left:`${1.2*index + Math.random()}%`,
+                transform:`scale(${0.5})`,
+                bottom:`${b}%`,
+                zIndex: `${-b}`}}>
+                  <MyTree />
+              </div>
+            )
+          }
+
+          if(value.grass){
+            console.log('need some grass');
+            return(
+              <div className='grass' style={{
+                  left:`${1.2*index + Math.random()}%`,
+                  transform:'scale(0.1)',
+                  bottom:`${1.2*index+Math.random()}%`}}>
+                <img src={grass}></img>
+              </div>
+            )
+          }
+        })}
       </div>
-        //     )
-        //   }
-        // )}
     )
-  // }
 }
 
 export default TreeSet;
