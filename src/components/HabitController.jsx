@@ -78,8 +78,9 @@ function HabitController(props){
 
 
   return (
-    <div>
-      <a className='hideCalendarButton' onClick={hideCalendar}></a>
+    <div className="habitController">
+        <a className='hideCalendarButton' onClick={hideCalendar}></a>
+
       <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
         <CalendarReact toggle={toggle}/>
       </div>

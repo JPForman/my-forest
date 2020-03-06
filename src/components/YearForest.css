@@ -1,3 +1,10 @@
+.grassSet {
+  width: 100%;
+  height: 100%;
+  display: flex;
+flex-wrap: wrap;
+}
+
 .sun {
   height: 400px;
   width: 400px;
