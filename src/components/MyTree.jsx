@@ -2,7 +2,8 @@ import React from 'react';
 import './MyTree.css';
 
 
-function MyTree(){
+function MyTree(habitEventList){
+  console.log('myTree habitEventList: ', habitEventList);
   return(
     <div>
       <div className='tree'>

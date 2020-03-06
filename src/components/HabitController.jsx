@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 // import './HabitController.css';
 import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form } from 'reactstrap';
 import CalendarReact from './CalendarReact';
+import YearForest from './YearForest';
 
 
 
 function HabitController(props){
 
+// Master Habit Event List
 const [habitEventList, setHabitEventList] = useState([]);
 
 // Modal Stuff
@@ -32,6 +34,25 @@ const [habitEventList, setHabitEventList] = useState([]);
     setCSelected([...cSelected]);
   }
 
+// Submit new Habit to List
+
+
+    //  TRYING TO FIGURE OUT DUPLICATE DATES
+    // if(habitEventList.find(x=>x.date === dateTitle)) {
+    //   console.log('this date exists!');
+    //   console.log('before slice habitEventList', habitEventList);
+    //   let repeatDateIndex = habitEventList.findIndex(x=>x.date === dateTitle)
+    //   let slicedList = habitEventList.slice(repeatDateIndex, repeatDateIndex+1)
+    //   let newHabit = {
+    //     date: dateTitle,
+    //     tree: cSelected.includes('a tree'),
+    //     flower: cSelected.includes('a flower'),
+    //     grass: cSelected.includes('some grass'),
+    //   }
+    //   setHabitEventList(habitEventList => [slicedList, newHabit]);
+    //   console.log('before slice habitEventList', habitEventList);
+    // }
+
   function handleAddHabitEvent(event) {
     event.preventDefault();
 
@@ -41,8 +62,10 @@ const [habitEventList, setHabitEventList] = useState([]);
       flower: cSelected.includes('a flower'),
       grass: cSelected.includes('some grass'),
     }
+
     setHabitEventList(habitEventList => [...habitEventList, newHabit]);
     setModal(!modal);
+    setCSelected([]);
   }
 
   return (
@@ -67,9 +90,9 @@ const [habitEventList, setHabitEventList] = useState([]);
              <h5>{cSelected[1]}</h5>
 
              <h5>{cSelected[2]}</h5>
-
       </ModalFooter>
     </Modal>
+    <YearForest habitEventList={habitEventList}/>
     </div>
   );
 }

@@ -4,12 +4,12 @@ import TreeSet from './TreeSet';
 import './YearForest.css';
 
 
-function YearForest(){
+function YearForest(habitEventList){
   return(
     <div className='sky'>
     <div className='sun'>    </div>
     <div className='ground'>
-      <TreeSet />
+      <TreeSet habitEventList={habitEventList}/>
     </div>
     </div>
 
