@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
+import TallySheet from './TallySheet';
 
 
 
@@ -68,6 +69,8 @@ const [habitEventList, setHabitEventList] = useState([]);
     setCSelected([]);
   }
 
+
+
   return (
     <div>
     <CalendarReact toggle={toggle}/>
@@ -93,6 +96,7 @@ const [habitEventList, setHabitEventList] = useState([]);
       </ModalFooter>
     </Modal>
     <YearForest habitEventList={habitEventList}/>
+    <TallySheet habitEventList={habitEventList}/>
     </div>
   );
 }
