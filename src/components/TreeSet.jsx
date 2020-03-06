@@ -1,8 +1,6 @@
 import React from 'react';
 import MyTree from './MyTree';
-import Grass from './Grass';
 import './TreeSet.css';
-import grass from "./images/grass.png"
 
 function TreeSet(habitEventList){
 
@@ -17,17 +15,6 @@ function TreeSet(habitEventList){
                 transform:`scale(${0.5})`,
                 bottom:`${30 + 100*Math.random()}%`}}>
                   <MyTree />
-              </div>
-            )
-          }
-          console.log('got past tree');
-          if(value.grass){
-            return(
-              <div className='grass' style={{
-                  left:`${1.2*index + Math.random()}%`,
-                  transform:'scale(0.1)',
-                  bottom:`${1.2*index+Math.random()}%`}}>
-                <img src={grass}></img>
               </div>
             )
           }
