@@ -15,14 +15,16 @@ function TreeSet(habitEventList){
 
     return(
       <div>
-        <p>hi</p>
 
         {habitEventList.habitEventList.habitEventList.map((value, index) => {
+          console.log("TreeList Map value: ", value);
+          if(value.tree){
           return (
                 <div className='tree' style={{left:`${1.2*index + Math.random()}%`, transform:`scale(${0.5})`, bottom:`${30 + 100*Math.random()}%`}}>
                     <MyTree />
                 </div>
-            )})}
+            )}
+          })}
       </div>
         //     )
         //   }
