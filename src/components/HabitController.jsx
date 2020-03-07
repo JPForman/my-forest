@@ -90,9 +90,27 @@ function HabitController(props){
         }
       }
 
+// Tally Sheet Collapse Logic
       const [isOpen, setIsOpen] = useState(false);
 
       const toggleCollapse = () => setIsOpen(!isOpen);
+
+      const [treeTotal, setTreeTotal] = useState(0)
+
+      function click(habitEventList) {
+        console.log('le click')
+        console.log('habitEventList in Click', habitEventList);
+        // console.log('habitEventList.habitEventList in SumTree', habitEventList.habitEventList);
+        let treeBools = habitEventList.map(function (habit) {
+          return habit.tree; });
+        console.log('treeBools: ', treeBools);
+
+        let tempSum = (treeBools.filter(a => a !== false)).length;
+        console.log('tempSum: ', tempSum)
+        setTreeTotal(tempSum);
+        toggleCollapse();
+        // return tempSum;
+        }
 
       return (
         <div className="habitController">
@@ -128,13 +146,16 @@ function HabitController(props){
 
           </div>
           <a className='hideCalendarButton' onClick={hideCalendar}></a>
-          <div onClick={toggleCollapse}>
+          <div onClick={()=>click(habitEventList)} habitEventList={habitEventList}>
             <div className='cloudPart1'></div>
             <div className='cloudPart2'></div>
               <Collapse isOpen={isOpen}>
                 <Card>
                   <CardBody>
-                  <TallySheet />
+                      <div>
+                        <h1>TallySheet</h1>
+                        <h3>Total Trees: {treeTotal} </h3>
+                      </div>
                   </CardBody>
                 </Card>
               </Collapse>
