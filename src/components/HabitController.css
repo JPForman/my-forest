@@ -1,14 +1,32 @@
-.hideTallySheetButton {
-  background-color: pink;
+.cloudPart1{
+  background-image: linear-gradient(to bottom right, darkgrey, #e4f1f5);
   border-radius: 100%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   position: absolute;
   width: 10%;
   height: 4%;
-  right: 10%;
-  bottom: 10%;
+  top: 10%;
+  left: 30%;
 }
 
+.cloudPart2{
+  background-image: linear-gradient(to bottom right, darkgrey, #e4f1f5);
+  border-radius: 100%;
+  /* border: 2px solid black; */
+  position: absolute;
+  width: 3%;
+  height: 8%;
+  top: 5%;
+  left: 35%;
+}
+
+.cloudPart1:hover {
+  background-image: linear-gradient(to bottom right, darkgrey, lightgrey);;
+}
+
+.cloudPart2:hover {
+  background-image: linear-gradient(to bottom right, darkgrey, lightgrey);;
+}
 .hideCalendarButton {
   border-color: transparent;
   background-color: transparent;
@@ -25,9 +43,6 @@
   z-index: -1;
 }
 
-.hideTallySheetButton:hover {
-  border-bottom-color: darkgrey;
-}
 
 .hideCalendarButton:hover {
   border-bottom: 130px solid darkgrey;

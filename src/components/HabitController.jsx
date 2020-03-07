@@ -123,7 +123,10 @@ function HabitController(props){
             <TallySheet habitEventList={habitEventList}/>
           </div>
           <a className='hideCalendarButton' onClick={hideCalendar}></a>
-          <a className='hideTallySheetButton' onClick={hideTallySheet}></a>
+          <div onClick={hideTallySheet}>
+            <div className='cloudPart1'></div>
+            <div className='cloudPart2'></div>
+          </div>
         </div>
       );
     }
