@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import './HabitController.css';
-import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, Collapse, CardBody, Card } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
 import TallySheet from './TallySheet';
@@ -90,10 +90,15 @@ function HabitController(props){
         }
       }
 
+      const [isOpen, setIsOpen] = useState(false);
+
+      const toggleCollapse = () => setIsOpen(!isOpen);
+
       return (
         <div className="habitController">
 
           <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
+
             <CalendarReact toggle={toggle}/>
           </div>
           <Modal isOpen={modal} toggle={toggle} >
@@ -120,12 +125,19 @@ function HabitController(props){
           <YearForest habitEventList={habitEventList}/>
 
           <div className='tallySheet' style={{display: `${tallySheetDisplay}`}}>
-            <TallySheet habitEventList={habitEventList}/>
+
           </div>
           <a className='hideCalendarButton' onClick={hideCalendar}></a>
-          <div onClick={hideTallySheet}>
+          <div onClick={toggleCollapse}>
             <div className='cloudPart1'></div>
             <div className='cloudPart2'></div>
+              <Collapse isOpen={isOpen}>
+                <Card>
+                  <CardBody>
+                  <TallySheet />
+                  </CardBody>
+                </Card>
+              </Collapse>
           </div>
         </div>
       );

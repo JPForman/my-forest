@@ -32,20 +32,8 @@ function TallySheet(habitEventList){
 console.log('Tally!');
     return (
       <div>
-        <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
-<Collapse isOpen={isOpen}>
-  <Card>
-    <CardBody>
-    Anim pariatur cliche reprehenderit,
-     enim eiusmod high life accusamus terry richardson ad squid. Nihil
-     anim keffiyeh helvetica, craft beer labore wes anderson cred
-     nesciunt sapiente ea proident.
-    </CardBody>
-  </Card>
-</Collapse>
-
         <h1>TallySheet</h1>
-        <h3>Total Trees:`${ treeTotal }`</h3>
+        <h3>Total Trees: {treeTotal} </h3>
       </div>
     );
 

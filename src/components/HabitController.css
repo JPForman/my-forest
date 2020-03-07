@@ -1,5 +1,5 @@
 .cloudPart1{
-  background-image: linear-gradient(to bottom right, darkgrey, #e4f1f5);
+  background-image: linear-gradient(to bottom left, darkgrey, #e4f1f5);
   border-radius: 100%;
   /* border: 2px solid black; */
   position: absolute;
@@ -10,7 +10,7 @@
 }
 
 .cloudPart2{
-  background-image: linear-gradient(to bottom right, darkgrey, #e4f1f5);
+  background-image: linear-gradient(to bottom left, darkgrey, #e4f1f5);
   border-radius: 100%;
   /* border: 2px solid black; */
   position: absolute;
@@ -21,11 +21,11 @@
 }
 
 .cloudPart1:hover {
-  background-image: linear-gradient(to bottom right, darkgrey, lightgrey);;
+  background-image: linear-gradient(to bottom left, darkgrey, lightgrey);;
 }
 
 .cloudPart2:hover {
-  background-image: linear-gradient(to bottom right, darkgrey, lightgrey);;
+  background-image: linear-gradient(to bottom left, darkgrey, lightgrey);;
 }
 .hideCalendarButton {
   border-color: transparent;
