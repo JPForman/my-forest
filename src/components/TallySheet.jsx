@@ -23,12 +23,11 @@ function TallySheet(habitEventList){
     // console.log('totalTree before sum', treeTotal);
     // SumTree(habitEventList);
     // console.log('totalTree after sum', treeTotal);
-
+console.log('Tally!');
     return (
       <div>
         <h1>TallySheet</h1>
         <h3>Total Trees:`${ treeTotal }`</h3>
-
       </div>
     );
 

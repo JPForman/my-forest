@@ -77,9 +77,18 @@ function HabitController(props){
   }
 
 
+const [tallySheetDisplay, setTallySheetDisplay] = useState('block');
+
+  function hideTallySheet() {
+    if (setTallySheetDisplay === 'block') {
+      setTallySheetDisplay('none'); }
+    else if(tallySheetDisplay === 'none') {
+      setTallySheetDisplay('block');
+    }
+  }
+
   return (
     <div className="habitController">
-        <a className='hideCalendarButton' onClick={hideCalendar}></a>
 
       <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
         <CalendarReact toggle={toggle}/>
@@ -106,7 +115,10 @@ function HabitController(props){
         </ModalFooter>
       </Modal>
       <YearForest habitEventList={habitEventList}/>
+      <TallySheet habitEventList={habitEventList}/>
 
+      <a className='hideCalendarButton' onClick={hideCalendar}></a>
+      <a className='hideTallySheetButton' onClick={hideTallySheet}></a>
     </div>
   );
 }

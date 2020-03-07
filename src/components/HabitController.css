@@ -1,3 +1,20 @@
+.hideTallySheetButton {
+  border-color: transparent;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 50px solid #a33f00;
+  border-top-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 75%;
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  z-index: -1;
+}
+
 .hideCalendarButton {
   border-color: transparent;
   background-color: transparent;
@@ -14,12 +31,13 @@
   z-index: -1;
 }
 
-.hideCalendarButton:hover {
-  border-bottom: 130px solid darkgrey;
-
+.hideTallySheetButton:hover {
+  border-bottom-color: darkgrey;
 }
 
-
+.hideCalendarButton:hover {
+  border-bottom: 130px solid darkgrey;
+}
 
 .HabitController {
   width: 243px;
