@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import './HabitController.css';
 import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form } from 'reactstrap';
@@ -71,57 +73,60 @@ function HabitController(props){
   function hideCalendar() {
     if (calendarDisplay === 'block') {
       setCalendarDisplay('none'); }
-    else if(calendarDisplay === 'none') {
-      setCalendarDisplay('block');
+      else if(calendarDisplay === 'none') {
+        setCalendarDisplay('block');
+      }
     }
-  }
 
 
-const [tallySheetDisplay, setTallySheetDisplay] = useState('block');
+    const [tallySheetDisplay, setTallySheetDisplay] = useState('block');
 
-  function hideTallySheet() {
-    if (setTallySheetDisplay === 'block') {
-      setTallySheetDisplay('none'); }
-    else if(tallySheetDisplay === 'none') {
-      setTallySheetDisplay('block');
+    function hideTallySheet() {
+      console.log('hi DE tallySheet :)');
+      if (tallySheetDisplay === 'block') {
+        setTallySheetDisplay('none'); }
+        else if(tallySheetDisplay === 'none') {
+          setTallySheetDisplay('block');
+        }
+      }
+
+      return (
+        <div className="habitController">
+
+          <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
+            <CalendarReact toggle={toggle}/>
+          </div>
+          <Modal isOpen={modal} toggle={toggle} >
+            <ModalHeader toggle={toggle}>{dateTitle}</ModalHeader>
+            <ModalBody>
+              Todaysies
+            </ModalBody>
+            <ModalFooter>
+              <Form onSubmit={handleAddHabitEvent}>
+                <ButtonGroup>
+                  <Button color="primary" onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
+                  <Button color="primary" onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
+                  <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
+                </ButtonGroup>
+                <button type='submit'>true</button>
+              </Form>
+              <h5>{cSelected[0]}</h5>
+
+              <h5>{cSelected[1]}</h5>
+
+              <h5>{cSelected[2]}</h5>
+            </ModalFooter>
+          </Modal>
+          <YearForest habitEventList={habitEventList}/>
+
+          <div className='tallySheet' style={{display: `${tallySheetDisplay}`}}>
+            <TallySheet habitEventList={habitEventList}/>
+          </div>
+          <a className='hideCalendarButton' onClick={hideCalendar}></a>
+          <a className='hideTallySheetButton' onClick={hideTallySheet}></a>
+        </div>
+      );
     }
-  }
 
-  return (
-    <div className="habitController">
-
-      <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
-        <CalendarReact toggle={toggle}/>
-      </div>
-      <Modal isOpen={modal} toggle={toggle} >
-        <ModalHeader toggle={toggle}>{dateTitle}</ModalHeader>
-        <ModalBody>
-          Todaysies
-        </ModalBody>
-        <ModalFooter>
-          <Form onSubmit={handleAddHabitEvent}>
-            <ButtonGroup>
-              <Button color="primary" onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
-              <Button color="primary" onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
-              <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
-            </ButtonGroup>
-            <button type='submit'>true</button>
-          </Form>
-          <h5>{cSelected[0]}</h5>
-
-          <h5>{cSelected[1]}</h5>
-
-          <h5>{cSelected[2]}</h5>
-        </ModalFooter>
-      </Modal>
-      <YearForest habitEventList={habitEventList}/>
-      <TallySheet habitEventList={habitEventList}/>
-
-      <a className='hideCalendarButton' onClick={hideCalendar}></a>
-      <a className='hideTallySheetButton' onClick={hideTallySheet}></a>
-    </div>
-  );
-}
-
-export default HabitController;
-// <TallySheet habitEventList={habitEventList}/>
+    export default HabitController;
+    // <TallySheet habitEventList={habitEventList}/>

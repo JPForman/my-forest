@@ -1,18 +1,12 @@
 .hideTallySheetButton {
-  border-color: transparent;
-  background-color: transparent;
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 50px solid #a33f00;
-  border-top-radius: 100%;
-  border-bottom-left-radius: 100%;
-  border-bottom-right-radius: 75%;
+  background-color: pink;
+  border-radius: 100%;
+  border: 2px solid black;
   position: absolute;
+  width: 10%;
+  height: 4%;
   right: 10%;
   bottom: 10%;
-  z-index: -1;
 }
 
 .hideCalendarButton {
