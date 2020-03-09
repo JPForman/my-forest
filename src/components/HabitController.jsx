@@ -6,6 +6,7 @@ import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, 
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
 import TallySheet from './TallySheet';
+import keyHole from './images/keyhole.png'
 
 
 
@@ -97,7 +98,7 @@ function HabitController(props){
 
       const [treeTotal, setTreeTotal] = useState(0)
 
-      function click(habitEventList) {
+      function toggleTallySheet(habitEventList) {
         console.log('le click')
         console.log('habitEventList in Click', habitEventList);
         // console.log('habitEventList.habitEventList in SumTree', habitEventList.habitEventList);
@@ -110,6 +111,10 @@ function HabitController(props){
         setTreeTotal(tempSum);
         toggleCollapse();
         // return tempSum;
+        }
+
+        function click(){
+          console.log('its le click');
         }
 
       return (
@@ -146,7 +151,7 @@ function HabitController(props){
 
           </div>
           <a className='hideCalendarButton' onClick={hideCalendar}></a>
-          <div onClick={()=>click(habitEventList)} habitEventList={habitEventList}>
+          <div onClick={()=>toggleTallySheet(habitEventList)} habitEventList={habitEventList}>
             <div className='cloudPart1'></div>
             <div className='cloudPart2'></div>
               <Collapse isOpen={isOpen}>
@@ -155,11 +160,15 @@ function HabitController(props){
                       <div>
                         <h1>TallySheet</h1>
                         <h3>Total Trees: {treeTotal} </h3>
+                        <h3>Percentage of Days With Trees: {(treeTotal/habitEventList.length)*100}%</h3>
                       </div>
                   </CardBody>
                 </Card>
               </Collapse>
           </div>
+          <a onClick={click}>
+            <img src={keyHole}></img>
+          </a>
         </div>
       );
     }
