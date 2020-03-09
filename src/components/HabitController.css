@@ -11,6 +11,7 @@
   height: 4%;
   top: 10%;
   left: 30%;
+  cursor: pointer;
 }
 
 .cloudPart2{
@@ -22,6 +23,7 @@
   height: 8%;
   top: 5%;
   left: 35%;
+  cursor: pointer;
 }
 
 .cloudPart1:hover {
@@ -44,20 +46,21 @@
   background-color: transparent;
   width: 0;
   height: 0;
-  border-left: 50px solid transparent;
-  border-right: 535px solid transparent;
-  border-bottom: 130px solid lightgrey;
+  border-left: 10vh solid transparent;
+  border-right: 60vh solid transparent;
+  border-bottom: 20vh solid lightgrey;
   border-top-left-radius: 56%;
   border-bottom-right-radius: 15%;
   position: absolute;
-  right: 20%;
+  right: 15%;
   top: 20%;
+  cursor: pointer;
   /* z-index: -1; */
 }
 
 
 .hideCalendarButton:hover {
-  border-bottom: 130px solid darkgrey;
+  border-bottom: 20vh solid darkgrey;
 }
 
 .keyHole{
@@ -65,9 +68,9 @@
   height: 10vh;
   right: 2vh;
   bottom: 2vh;
-
 }
 
 .keyHoleDiv {
+  cursor: pointer;
   right: 0;
 }

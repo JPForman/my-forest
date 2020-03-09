@@ -4,10 +4,10 @@
   top: 10vh;
   right: 10vh;
   z-index: 2;
+  
 }
 
 .calendar {
   border: 2px solid black;
   border-radius: 10px;
-
 }
