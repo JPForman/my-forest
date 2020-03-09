@@ -3,7 +3,7 @@ import './HabitController.css';
 import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, Collapse, CardBody, Card } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
-import ToggleSecret from './ToggleSecret';
+import KeySignIn from './KeySignIn';
 import TallySheet from './TallySheet';
 import keyHole from './images/keyhole.png';
 
@@ -113,11 +113,16 @@ function HabitController(props){
         }
 
 
+        const [keyDisplay, setkeyDisplay] = useState('none');
 
-        function keyClick(){
-          console.log('its le click');
+        function ToggleKey() {
+          if (keyDisplay === 'block') {
+            setkeyDisplay('none'); }
+            else if(keyDisplay === 'none') {
+              setkeyDisplay('block');
+            }
+          }
 
-        }
 
       return (
         <div className='fullBody'>
@@ -148,10 +153,6 @@ function HabitController(props){
 
           <YearForest habitEventList={habitEventList}/>
 
-          <div className='tallySheet' style={{display: `${tallySheetDisplay}`}}>
-            <ToggleSecret />
-          </div>
-
           <a className='hideCalendarButton' onClick={hideCalendar}></a>
 
           <div onClick={()=>toggleTallySheet(habitEventList)} habitEventList={habitEventList}>
@@ -171,9 +172,17 @@ function HabitController(props){
           </div>
 
 
-          <a onClick={keyClick} className='keyHoleDiv'>
+          <a onClick={ToggleKey} className='keyHoleDiv'>
             <img className='keyHole' src={keyHole}></img>
           </a>
+
+          <div className='keyDiv' style={{display: `${keyDisplay}`}}>
+            <KeySignIn />
+          </div>
+
+
+
+
 
         </div>
       );

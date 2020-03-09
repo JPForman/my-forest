@@ -1,0 +1,9 @@
+.keyCards{
+  font-size: 3vh;
+  opacity: .8;
+  position: absolute;
+  width: 100vh;
+  height: auto;
+  bottom: 2vh;
+  right: 10vh;
+}
