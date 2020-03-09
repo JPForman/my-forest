@@ -1,12 +1,11 @@
-
-
 import React, { useState } from 'react';
 import './HabitController.css';
 import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, Collapse, CardBody, Card } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
+import ToggleSecret from './ToggleSecret';
 import TallySheet from './TallySheet';
-import keyHole from './images/keyhole.png'
+import keyHole from './images/keyhole.png';
 
 
 
@@ -113,12 +112,18 @@ function HabitController(props){
         // return tempSum;
         }
 
-        function click(){
+
+
+        function keyClick(){
           console.log('its le click');
+
         }
 
       return (
         <div className="habitController">
+
+
+
 
           <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
 
@@ -146,7 +151,7 @@ function HabitController(props){
             </ModalFooter>
           </Modal>
           <YearForest habitEventList={habitEventList}/>
-
+          <ToggleSecret />
           <div className='tallySheet' style={{display: `${tallySheetDisplay}`}}>
 
           </div>
@@ -166,9 +171,12 @@ function HabitController(props){
                 </Card>
               </Collapse>
           </div>
-          <a onClick={click}>
+
+
+          <a onClick={keyClick} class='keyHoleDiv'>
             <img src={keyHole}></img>
           </a>
+
         </div>
       );
     }
