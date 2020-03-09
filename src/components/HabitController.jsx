@@ -120,10 +120,7 @@ function HabitController(props){
         }
 
       return (
-        <div className="habitController">
-
-
-
+        <div className='fullBody'>
 
           <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
             <CalendarReact toggle={toggle}/>
@@ -142,19 +139,21 @@ function HabitController(props){
                   <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
                 </ButtonGroup>
                 <button type='submit'>true</button>
-                <br></br>
               </Form>
               <h5>{cSelected[0]}</h5>
               <h5>{cSelected[1]}</h5>
               <h5>{cSelected[2]}</h5>
             </ModalFooter>
           </Modal>
-          <YearForest habitEventList={habitEventList}/>
-          <ToggleSecret />
-          <div className='tallySheet' style={{display: `${tallySheetDisplay}`}}>
 
+          <YearForest habitEventList={habitEventList}/>
+
+          <div className='tallySheet' style={{display: `${tallySheetDisplay}`}}>
+            <ToggleSecret />
           </div>
+
           <a className='hideCalendarButton' onClick={hideCalendar}></a>
+
           <div onClick={()=>toggleTallySheet(habitEventList)} habitEventList={habitEventList}>
             <div className='cloudPart1'></div>
             <div className='cloudPart2'></div>
@@ -172,8 +171,8 @@ function HabitController(props){
           </div>
 
 
-          <a onClick={keyClick} class='keyHoleDiv'>
-            <img src={keyHole}></img>
+          <a onClick={keyClick} className='keyHoleDiv'>
+            <img className='keyHole' src={keyHole}></img>
           </a>
 
         </div>

@@ -1,3 +1,7 @@
+.calendarReact{
+  z-index: 1;
+}
+
 .cloudPart1{
   background-image: linear-gradient(to bottom left, darkgrey, #e4f1f5);
   border-radius: 100%;
@@ -27,6 +31,14 @@
 .cloudPart2:hover {
   background-image: linear-gradient(to bottom left, darkgrey, lightgrey);;
 }
+
+.fullBody{
+  width: 100vh;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
 .hideCalendarButton {
   border-color: transparent;
   background-color: transparent;
@@ -40,7 +52,7 @@
   position: absolute;
   right: 20%;
   top: 20%;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 
@@ -48,23 +60,14 @@
   border-bottom: 130px solid darkgrey;
 }
 
-.HabitController {
-  width: 243px;
-  height: 300px;
+.keyHole{
   position: absolute;
-  right: 6%;
-  top: 45%;
-  margin-right: 2px;
-  border: 2px solid black;
-  background-color: #c7846b;
-  opacity: .5;
-  text-align: center;
-  border-radius: 3%;
+  height: 10vh;
+  right: 2vh;
+  bottom: 2vh;
+
 }
 
 .keyHoleDiv {
-  position: absolute;
-  right: 10%;
-  bottom: 30%;
-  transform: scale(0.1)
+  right: 0;
 }
