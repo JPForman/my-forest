@@ -128,7 +128,7 @@ function HabitController(props){
         <div className='fullBody'>
 
           <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
-            <CalendarReact toggle={toggle}/>
+            <CalendarReact className='calendar' toggle={toggle}/>
           </div>
 
           <Modal isOpen={modal} toggle={toggle} >
