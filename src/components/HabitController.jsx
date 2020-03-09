@@ -126,9 +126,9 @@ function HabitController(props){
 
 
           <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
-
             <CalendarReact toggle={toggle}/>
           </div>
+
           <Modal isOpen={modal} toggle={toggle} >
             <ModalHeader toggle={toggle}>{dateTitle}</ModalHeader>
             <ModalBody>
@@ -142,11 +142,10 @@ function HabitController(props){
                   <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
                 </ButtonGroup>
                 <button type='submit'>true</button>
+                <br></br>
               </Form>
               <h5>{cSelected[0]}</h5>
-
               <h5>{cSelected[1]}</h5>
-
               <h5>{cSelected[2]}</h5>
             </ModalFooter>
           </Modal>
