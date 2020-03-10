@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './HabitController.css';
-import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, Collapse, CardBody, Card } from 'reactstrap';
+import { Button, Input, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, Collapse, CardBody, Card } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
 import KeySignIn from './KeySignIn';
@@ -52,14 +52,19 @@ function HabitController(props){
   //   console.log('before slice habitEventList', habitEventList);
   // }
 
+  function handleSpecialNote(specialNote){
+
+  }
+  const [specialNote, setSpecialNote] = useState('');
+
   function handleAddHabitEvent(event) {
     event.preventDefault();
+
 
     const treeLeft = 135*Math.random()+5
     const treeBottom = 45*Math.random()+40
     const grassRight = 175*Math.random()-30
     const grassTop = 48*Math.random()-18
-
 
     let newHabit = {
       date: dateTitle,
@@ -70,9 +75,11 @@ function HabitController(props){
       grass: cSelected.includes('some grass'),
       grassRight: grassRight,
       grassTop: grassTop,
+      specialNote: specialNote,
 
 
     }
+    console.log('handled newHabit.specialNote: ', newHabit.specialNote);
     console.log('newHabit: ', newHabit);
 
     setHabitEventList(habitEventList => [...habitEventList, newHabit]);
@@ -171,7 +178,13 @@ function HabitController(props){
                   <Button color="primary" onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
                   <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
                 </ButtonGroup>
-                <button type='submit'>true</button>
+                <Input
+                  type="text"
+                  name="specialNote"
+                  value={specialNote}
+                  onChange={e=> setSpecialNote(e.target.value)}
+                  placeholder="special note?" />
+                <button type='submit' value='submit'>true</button>
               </Form>
               <h5>{cSelected[0]}</h5>
               <h5>{cSelected[1]}</h5>

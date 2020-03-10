@@ -15,9 +15,6 @@ function TreeSet(habitEventList){
       }
     }
 
-    console.log('TreeSet habitEventList: ', habitEventList);
-
-
     return(
       <div>
 

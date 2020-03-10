@@ -10,7 +10,6 @@ function GrassSet(habitEventList){
 
         {habitEventList.habitEventList.habitEventList.map((value, index) => {
 
-          console.log('Grass Set!');
           if(value.grass){
             return(
               <div className='grass' style={{
