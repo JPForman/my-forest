@@ -114,6 +114,7 @@ function HabitController(props){
           return habit.flower; });
           console.log('flowerBools: ', flowerBools);
         let tempFlowerSum = (flowerBools.filter(a => a !== false)).length;
+        console.log('TEMPFLOWERSUM: ', tempFlowerSum);
         setFlowerTotal(tempFlowerSum);
 
         toggleCollapse();
@@ -173,7 +174,7 @@ function HabitController(props){
               <Collapse isOpen={isOpen}>
                 <Card>
                   <CardBody>
-                      <div>
+                      <div className='tallySheet'>
                         <h1>TallySheet</h1>
 
                         <div className="treeTally">
@@ -181,11 +182,15 @@ function HabitController(props){
                           <h3>Percentage of Marked Days With Trees: {(treeTotal/habitEventList.length)*100}%</h3>
                         </div>
 
+                        <div className="flowerTally">
                         <h3>Total Flowers: {flowerTotal} </h3>
                         <h3>Percentage of Marked Days With Flowers: {(flowerTotal/habitEventList.length)*100}%</h3>
+                        </div>
 
+                        <div className='grassTally'>
                         <h3>Total Grass: {grassTotal} </h3>
                         <h3>Percentage of Marked Days With Grass: {(grassTotal/habitEventList.length)*100}%</h3>
+                        </div>
                       </div>
                   </CardBody>
                 </Card>
