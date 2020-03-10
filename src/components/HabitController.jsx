@@ -175,21 +175,21 @@ function HabitController(props){
                 <Card>
                   <CardBody>
                       <div className='tallySheet'>
-                        <h1>TallySheet</h1>
+                        <h1 className='tallyTitle'>TallySheet</h1>
 
                         <div className="treeTally">
                           <h3>Total Trees: {treeTotal} </h3>
-                          <h3>Percentage of Marked Days With Trees: {(treeTotal/habitEventList.length)*100}%</h3>
+                          <h5>Percentage of Marked Days With Trees: {Math.round((treeTotal/habitEventList.length)*100)}%</h5>
                         </div>
 
                         <div className="flowerTally">
                         <h3>Total Flowers: {flowerTotal} </h3>
-                        <h3>Percentage of Marked Days With Flowers: {(flowerTotal/habitEventList.length)*100}%</h3>
+                        <h5>Percentage of Marked Days With Flowers: {Math.round((flowerTotal/habitEventList.length)*100)}%</h5>
                         </div>
 
                         <div className='grassTally'>
                         <h3>Total Grass: {grassTotal} </h3>
-                        <h3>Percentage of Marked Days With Grass: {(grassTotal/habitEventList.length)*100}%</h3>
+                        <h5>Percentage of Marked Days With Grass: {Math.round((grassTotal/habitEventList.length)*100)}%</h5>
                         </div>
                       </div>
                   </CardBody>

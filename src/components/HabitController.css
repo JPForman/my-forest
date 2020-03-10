@@ -114,7 +114,15 @@
 
 .tallySheet {
   background-color: grey;
+  border: 5px solid brown;
+  border-radius: 5px;
 }
+
+.tallyTitle{
+  padding: 5px;
+  text-align: center;
+}
+
 
 .treeTally{
   width: 100%;

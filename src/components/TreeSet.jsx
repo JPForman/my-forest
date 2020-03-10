@@ -4,7 +4,7 @@ import './TreeSet.css';
 
 function TreeSet(habitEventList){
 
-  const [treeInfoDisplay, setTreeInfoDisplay] = useState('block');
+  const [treeInfoDisplay, setTreeInfoDisplay] = useState('none');
 
   function ToggleTreeInfo() {
     console.log('le toggle tree eh');
@@ -14,8 +14,6 @@ function TreeSet(habitEventList){
         setTreeInfoDisplay('block');
       }
     }
-
-    // console.log('habitEventList at tree: ', habitEventList.habitEventList.habitEventList[0].date);
 
     return(
       <div>
