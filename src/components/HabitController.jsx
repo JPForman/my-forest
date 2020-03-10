@@ -55,16 +55,23 @@ function HabitController(props){
   function handleAddHabitEvent(event) {
     event.preventDefault();
 
+    const treeLeft = 135*Math.random()+5
+    const treeBottom = 45*Math.random()+40
+
     let newHabit = {
       date: dateTitle,
       tree: cSelected.includes('a tree'),
+      treeLeft: treeLeft,
+      treeBottom: treeBottom,
       flower: cSelected.includes('a flower'),
       grass: cSelected.includes('some grass'),
     }
+    console.log('newHabit: ', newHabit);
 
     setHabitEventList(habitEventList => [...habitEventList, newHabit]);
     setModal(!modal);
     setCSelected([]);
+    console.log(habitEventList);
   }
 
   const [calendarDisplay, setCalendarDisplay] = useState('block');

@@ -15,6 +15,9 @@ function TreeSet(habitEventList){
       }
     }
 
+    console.log('TreeSet habitEventList: ', habitEventList);
+
+
     return(
       <div>
 
@@ -22,16 +25,16 @@ function TreeSet(habitEventList){
           if(value.tree){
             return (
               <div className='tree' style={{
-                transform:`scale(${0.5})`,
-                left:`${135*Math.random()+5}vh`,
-                bottom:`${45*Math.random()+40}vh`
+                  transform:`scale(${0.5})`,
+                  left:`${value.treeLeft}vh`,
+                  bottom:`${value.treeBottom}vh`,
                 }}>
 
                 <div onClick={()=>ToggleTreeInfo()}>
                   <MyTree />
                 </div>
 
-                <div style={{display:`${treeInfoDisplay}`}}>
+                <div className='treeInfo' style={{display:`${treeInfoDisplay}`}}>
                   <h1>{value.date}</h1>
                 </div>
               </div>
@@ -43,5 +46,6 @@ function TreeSet(habitEventList){
 }
 
 export default TreeSet;
-
+// left:`${135*Math.random()+5}vh`,
+// bottom:`${45*Math.random()+40}vh`
 // <TreeInfo />
