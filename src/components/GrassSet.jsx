@@ -14,9 +14,9 @@ function GrassSet(habitEventList){
           if(value.grass){
             return(
               <div className='grass' style={{
-                  left:`${8.2*index + Math.random()}%`,
                   transform:'scale(0.1)',
-                  bottom:`${1.2*index+Math.random()}%`}}>
+                  right:`${175*Math.random()-30}vh`,
+                  top:`${48*Math.random()-18}vh`}}>
                 <img src={grass}></img>
               </div>
             )
@@ -30,4 +30,7 @@ export default GrassSet;
 
 
 // transform:`scale(${0.5*(index+1)}
-        // <button className='treeButton' onClick={this.addNewGrassToList}>Add a tree?</button>
+// right:`-30vh`,
+// right:`145vh`,
+// top:`30vh`}}>
+// top:`-18vh`}}>

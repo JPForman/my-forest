@@ -1,6 +1,5 @@
 .grass {
   position: absolute;
-  left: 18.3%;
   display: flex;
-flex-wrap: wrap;
+  flex-wrap: wrap;
 }

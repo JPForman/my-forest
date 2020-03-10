@@ -11,9 +11,9 @@ function TreeSet(habitEventList){
           if(value.tree){
             return (
               <div className='tree' style={{
-                left:`${1.2*index + Math.random()}%`,
                 transform:`scale(${0.5})`,
-                bottom:`${30 + 100*Math.random()}%`}}>
+                left:`155vh`,
+                bottom:`85vh`}}>
                   <MyTree />
               </div>
             )
@@ -28,3 +28,5 @@ export default TreeSet;
 
 // transform:`scale(${0.5*(index+1)}
         // <button className='treeButton' onClick={this.addNewTreeToList}>Add a tree?</button>
+        // left:`5vh`,
+        // bottom:`40vh`}}>
