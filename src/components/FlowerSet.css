@@ -1,6 +1,7 @@
 .flower {
   position: absolute;
-  left: 18.3%;
-  display: flex;
-flex-wrap: wrap;
+  width: 100vh;
+  height: 100vh;
+  transform: scale(.07);
+
 }

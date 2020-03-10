@@ -9,18 +9,24 @@ import './YearForest.css';
 
 function YearForest(habitEventList){
   return(
-    <div className='sky'>
+    <div>
+      <div className='sky'>    </div>
       <div className='sun'>    </div>
-      <div className='ground'>
+      <div className='ground'></div>
+      <div className='grassSet'>
         <TreeSet habitEventList={habitEventList}/>
       </div>
+
       <div className='grassSet'>
         <GrassSet habitEventList={habitEventList}/>
       </div>
+
       <div className='flowerSet'>
         <FlowerSet habitEventList={habitEventList}/>
       </div>
+
     </div>
+
 
   );
 }
