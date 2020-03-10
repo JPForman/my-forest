@@ -63,6 +63,26 @@
   border-bottom: 20vh solid darkgrey;
 }
 
+.hideCalendarDiv:hover {
+  border-bottom: 22vh solid darkgrey;
+  cursor: pointer;
+}
+
+.hideCalendarDiv{
+  /* background-image: linear-gradient(to top left, darkgrey, #ebe8e6); */
+  z-index: 1;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 70vh 22vh 10vh;
+  border-color: transparent transparent lightgrey transparent;
+  border-top-left-radius: 126%;
+  border-bottom-right-radius: 15%;
+  position: absolute;
+  left: 80vh;
+  bottom: 60vh;
+}
+
 .keyHole{
   position: absolute;
   height: 10vh;
@@ -73,4 +93,8 @@
 .keyHoleDiv {
   cursor: pointer;
   right: 0;
+}
+
+.yearForest{
+  z-index: 1;
 }

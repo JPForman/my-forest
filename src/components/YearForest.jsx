@@ -13,7 +13,7 @@ function YearForest(habitEventList){
       <div className='sky'>    </div>
       <div className='sun'>    </div>
       <div className='ground'></div>
-      <div className='grassSet'>
+      <div className='treeSet'>
         <TreeSet habitEventList={habitEventList}/>
       </div>
 

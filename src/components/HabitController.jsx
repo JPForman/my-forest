@@ -96,21 +96,25 @@ function HabitController(props){
       const toggleCollapse = () => setIsOpen(!isOpen);
 
       const [treeTotal, setTreeTotal] = useState(0)
+      const [grassTotal, setGrassTotal] = useState(0)
+      const [flowerTotal, setFlowerTotal] = useState(0)
 
       function toggleTallySheet(habitEventList) {
-        console.log('le click')
-        console.log('habitEventList in Click', habitEventList);
-        // console.log('habitEventList.habitEventList in SumTree', habitEventList.habitEventList);
         let treeBools = habitEventList.map(function (habit) {
           return habit.tree; });
-        console.log('treeBools: ', treeBools);
+        let tempTreeSum = (treeBools.filter(a => a !== false)).length;
+        setTreeTotal(tempTreeSum);
 
-        let tempSum = (treeBools.filter(a => a !== false)).length;
-        console.log('tempSum: ', tempSum)
-        setTreeTotal(tempSum);
+        let grassBools = habitEventList.map(function (habit) {
+          return habit.grass; });
+          console.log('grassBools: ', grassBools);
+        let tempGrassSum = (grassBools.filter(a => a !== false)).length;
+        setGrassTotal(tempGrassSum);
+
         toggleCollapse();
-        // return tempSum;
         }
+
+
 
 
         const [keyDisplay, setkeyDisplay] = useState('none');
@@ -126,6 +130,10 @@ function HabitController(props){
 
       return (
         <div className='fullBody'>
+
+          <div className="hideCalendarDiv" onClick={hideCalendar}></div>
+          <YearForest habitEventList={habitEventList} className='yearForest'/>
+
 
           <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
             <CalendarReact className='calendar' toggle={toggle}/>
@@ -151,9 +159,8 @@ function HabitController(props){
             </ModalFooter>
           </Modal>
 
-          <YearForest habitEventList={habitEventList}/>
 
-          <a className='hideCalendarButton' onClick={hideCalendar}></a>
+
 
           <div onClick={()=>toggleTallySheet(habitEventList)} habitEventList={habitEventList}>
             <div className='cloudPart1'></div>
@@ -164,7 +171,13 @@ function HabitController(props){
                       <div>
                         <h1>TallySheet</h1>
                         <h3>Total Trees: {treeTotal} </h3>
-                        <h3>Percentage of Days With Trees: {(treeTotal/habitEventList.length)*100}%</h3>
+                        <h3>Percentage of Marked Days With Trees: {(treeTotal/habitEventList.length)*100}%</h3>
+
+                        <h3>Total Flowers: {flowerTotal} </h3>
+                        <h3>Percentage of Marked Days With Flowers: {(flowerTotal/habitEventList.length)*100}%</h3>
+
+                        <h3>Total Grass: {grassTotal} </h3>
+                        <h3>Percentage of Marked Days With Grass: {(grassTotal/habitEventList.length)*100}%</h3>
                       </div>
                   </CardBody>
                 </Card>
