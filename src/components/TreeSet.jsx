@@ -35,7 +35,7 @@ function TreeSet(habitEventList){
                 </div>
 
                 <div className='treeInfo' style={{display:`${treeInfoDisplay}`}}>
-                  <h1>{value.date}</h1>
+                  <h4>{value.date}</h4>
                 </div>
               </div>
             )
@@ -46,6 +46,3 @@ function TreeSet(habitEventList){
 }
 
 export default TreeSet;
-// left:`${135*Math.random()+5}vh`,
-// bottom:`${45*Math.random()+40}vh`
-// <TreeInfo />

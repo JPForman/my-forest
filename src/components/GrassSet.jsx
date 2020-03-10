@@ -15,8 +15,8 @@ function GrassSet(habitEventList){
             return(
               <div className='grass' style={{
                   transform:'scale(0.1)',
-                  right:`${175*Math.random()-30}vh`,
-                  top:`${48*Math.random()-18}vh`}}>
+                  right:`${value.grassRight}vh`,
+                  top:`${value.grassTop}vh`}}>
                 <img src={grass}></img>
               </div>
             )

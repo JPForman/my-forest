@@ -57,6 +57,9 @@ function HabitController(props){
 
     const treeLeft = 135*Math.random()+5
     const treeBottom = 45*Math.random()+40
+    const grassRight = 175*Math.random()-30
+    const grassTop = 48*Math.random()-18
+
 
     let newHabit = {
       date: dateTitle,
@@ -65,6 +68,10 @@ function HabitController(props){
       treeBottom: treeBottom,
       flower: cSelected.includes('a flower'),
       grass: cSelected.includes('some grass'),
+      grassRight: grassRight,
+      grassTop: grassTop,
+
+
     }
     console.log('newHabit: ', newHabit);
 
