@@ -95,6 +95,11 @@
   right: 0;
 }
 
+.treeTally{
+  background-color: brown;
+  color: white;
+}
+
 .yearForest{
   z-index: 1;
 }

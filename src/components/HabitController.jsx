@@ -4,7 +4,6 @@ import { Button, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, 
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
 import KeySignIn from './KeySignIn';
-import TallySheet from './TallySheet';
 import keyHole from './images/keyhole.png';
 
 
@@ -111,6 +110,12 @@ function HabitController(props){
         let tempGrassSum = (grassBools.filter(a => a !== false)).length;
         setGrassTotal(tempGrassSum);
 
+        let flowerBools = habitEventList.map(function (habit) {
+          return habit.flower; });
+          console.log('flowerBools: ', flowerBools);
+        let tempFlowerSum = (flowerBools.filter(a => a !== false)).length;
+        setFlowerTotal(tempFlowerSum);
+
         toggleCollapse();
         }
 
@@ -170,8 +175,11 @@ function HabitController(props){
                   <CardBody>
                       <div>
                         <h1>TallySheet</h1>
-                        <h3>Total Trees: {treeTotal} </h3>
-                        <h3>Percentage of Marked Days With Trees: {(treeTotal/habitEventList.length)*100}%</h3>
+
+                        <div className="treeTally">
+                          <h3>Total Trees: {treeTotal} </h3>
+                          <h3>Percentage of Marked Days With Trees: {(treeTotal/habitEventList.length)*100}%</h3>
+                        </div>
 
                         <h3>Total Flowers: {flowerTotal} </h3>
                         <h3>Percentage of Marked Days With Flowers: {(flowerTotal/habitEventList.length)*100}%</h3>
