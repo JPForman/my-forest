@@ -166,30 +166,34 @@ function HabitController(props){
             <CalendarReact className='calendar' toggle={toggle}/>
           </div>
 
-          <Modal isOpen={modal} toggle={toggle} >
-            <ModalHeader toggle={toggle}>{dateTitle}</ModalHeader>
-            <ModalBody>
-              Todaysies
-            </ModalBody>
-            <ModalFooter>
+          <Modal isOpen={modal} toggle={toggle}>
+            <div className='eventModal'>
+
+              <p>the sweet day of {dateTitle.toLowerCase()} deserves the following</p>
               <Form onSubmit={handleAddHabitEvent}>
+                <div className='modalButtons'>
                 <ButtonGroup>
-                  <Button color="primary" onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
-                  <Button color="primary" onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
-                  <Button color="primary" onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
+                  <Button className='modalButton modalTreeButton' onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
+                  <Button className='modalButton modalFlowerButton' onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
+                  <Button className='modalButton' onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
                 </ButtonGroup>
+              </div>
+
                 <Input
                   type="text"
                   name="specialNote"
-                  value={specialNote}
                   onChange={e=> setSpecialNote(e.target.value)}
                   placeholder="special note?" />
-                <button type='submit' value='submit'>true</button>
+                <button className='submitModal' type='submit' value='submit'>true</button>
+
               </Form>
-              <h5>{cSelected[0]}</h5>
-              <h5>{cSelected[1]}</h5>
-              <h5>{cSelected[2]}</h5>
-            </ModalFooter>
+              <div className='selectedModals'>
+                <h5>lovely</h5>
+                <h5>{cSelected[0]}</h5>
+                <h5>{cSelected[1]}</h5>
+                <h5>{cSelected[2]}</h5>
+              </div>
+          </div>
           </Modal>
 
 

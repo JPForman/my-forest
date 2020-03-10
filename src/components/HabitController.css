@@ -34,6 +34,14 @@
   background-image: linear-gradient(to bottom left, darkgrey, lightgrey);;
 }
 
+.eventModal{
+  background-color: #994d00;
+  border-radius: 5px;
+  color: white;
+  border: 12px solid #4d2600;
+  padding: 2vh;
+  height: 50vh;
+}
 
 .flowerTally{
   width: 100%;
@@ -100,6 +108,19 @@
   bottom: 60vh;
 }
 
+.modalButton{
+  margin: 2vh;
+}
+
+.modalButtons{
+  margin-bottom: 2vh;
+}
+
+.modalForm{
+  display: flex;
+  flex-direction: column;
+}
+
 .keyHole{
   position: absolute;
   height: 10vh;
@@ -110,6 +131,28 @@
 .keyHoleDiv {
   cursor: pointer;
   right: 0;
+}
+
+.modalTreeButton{
+  background-color: #00cccc;
+}
+
+.modalFlowerButton{
+  background-color: #b3003b;
+}
+
+
+.selectedModals{
+  flex: auto;
+  margin-top: 2vh;
+}
+
+.submitModal{
+  position: absolute;
+  bottom: 4vh;
+  right: 4vh;
+  background-color: #00cccc	;
+  border-radius: 5px;
 }
 
 .tallySheet {
