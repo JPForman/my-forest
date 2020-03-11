@@ -95,7 +95,6 @@
 
 .hideCalendarDiv{
   /* background-image: linear-gradient(to top left, darkgrey, #ebe8e6); */
-  z-index: 1;
   width: 0px;
   height: 0px;
   border-style: solid;
@@ -106,6 +105,21 @@
   position: absolute;
   left: 80vh;
   bottom: 60vh;
+  z-index: -1;
+}
+
+.hidedivdiv{
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 70vh 22vh 10vh;
+  border-color: transparent transparent transparent transparent;
+  border-top-left-radius: 126%;
+  border-bottom-right-radius: 15%;
+  position: absolute;
+  left: 80vh;
+  bottom: 60vh;
+  z-index: 2;
 }
 
 .modalButton{
@@ -174,7 +188,7 @@
   border-radius: 5px;
   padding: 5px;
 }
-
+/*
 .yearForest{
   z-index: 1;
-}
+} */

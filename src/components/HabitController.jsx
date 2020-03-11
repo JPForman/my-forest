@@ -164,7 +164,11 @@ function HabitController(props){
 
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
-            <div className="hideCalendarDiv" onClick={hideCalendar}></div>
+          <div className="hideCalendarDiv" onClick={hideCalendar}></div>
+          <div onClick={hideCalendar} className='hidedivdiv'>
+        </div>
+
+
             <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
               <CalendarReact className='calendar' toggle={toggle}/>
             </div>
