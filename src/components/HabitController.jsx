@@ -33,6 +33,7 @@ function HabitController(props){
     } else {
       cSelected.splice(index, 1);
     }
+    console.log('cSelected: ', cSelected);
     setCSelected([...cSelected]);
   }
 
@@ -77,15 +78,13 @@ function HabitController(props){
       grassTop: grassTop,
       specialNote: specialNote,
 
-
     }
-    console.log('handled newHabit.specialNote: ', newHabit.specialNote);
-    console.log('newHabit: ', newHabit);
 
     setHabitEventList(habitEventList => [...habitEventList, newHabit]);
     setModal(!modal);
     setCSelected([]);
-    console.log(habitEventList);
+    setSpecialNote('');
+
   }
 
   const [calendarDisplay, setCalendarDisplay] = useState('block');
@@ -154,6 +153,23 @@ function HabitController(props){
             }
           }
 
+        function preSelectedDate(newHabit){
+          console.log('preSelectedDate dateTitle: ', dateTitle);
+          console.log('preSelectedDate habitEventList: ', habitEventList);
+          console.log('FIND FUNCTION: ', (habitEventList.find(x => x.date)));
+          if ((habitEventList.find(x => x.date)) === dateTitle) {
+            console.log('its a match!', newHabit);
+            let matchElement = habitEventList.find(x => x.date === dateTitle);
+            let newSelectedHabitEventList = habitEventList.splice(matchElement.index, 1);
+
+            setCSelected(['a tree']);
+            console.log('newSelectedHabitEventList after set preDate: ', newSelectedHabitEventList);
+            console.log('habitEventList after set preDate: ', habitEventList);
+            console.log('matchElement = ', matchElement);
+          }
+          return;
+        }
+
 // <div className="hideCalendarDiv" onClick={hideCalendar}></div>
 // <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
 //   <CalendarReact className='calendar' toggle={toggle}/>
@@ -165,19 +181,17 @@ function HabitController(props){
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
           <div className="hideCalendarDiv" onClick={hideCalendar}></div>
-          <div onClick={hideCalendar} className='hidedivdiv'>
-        </div>
+          <div onClick={hideCalendar} className='hidedivdiv'></div>
 
 
             <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
-              <CalendarReact className='calendar' toggle={toggle}/>
+              <CalendarReact className='calendar' toggle={toggle} preSelectedDate={preSelectedDate()}/>
             </div>
 
 
 
-          <Modal isOpen={modal} toggle={toggle}>
+          <Modal isOpen={modal} toggle={toggle} >
             <div className='eventModal'>
-
               <p>the sweet day of {dateTitle.toLowerCase()} deserves the following</p>
               <Form onSubmit={handleAddHabitEvent}>
                 <div className='modalButtons'>

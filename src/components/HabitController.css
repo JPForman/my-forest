@@ -122,6 +122,10 @@
   z-index: 2;
 }
 
+.hidedivdiv:hover {
+  cursor: pointer;
+}
+
 .modalButton{
   margin: 2vh;
 }
