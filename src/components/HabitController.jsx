@@ -154,17 +154,22 @@ function HabitController(props){
             }
           }
 
+// <div className="hideCalendarDiv" onClick={hideCalendar}></div>
+// <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
+//   <CalendarReact className='calendar' toggle={toggle}/>
+// </div>
 
       return (
         <div className='fullBody'>
 
-          <div className="hideCalendarDiv" onClick={hideCalendar}></div>
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
+            <div className="hideCalendarDiv" onClick={hideCalendar}></div>
+            <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
+              <CalendarReact className='calendar' toggle={toggle}/>
+            </div>
 
-          <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
-            <CalendarReact className='calendar' toggle={toggle}/>
-          </div>
+
 
           <Modal isOpen={modal} toggle={toggle}>
             <div className='eventModal'>
