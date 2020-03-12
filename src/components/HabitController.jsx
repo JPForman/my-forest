@@ -84,7 +84,7 @@ function HabitController(props){
 
   }
 
-  const [calendarDisplay, setCalendarDisplay] = useState('block');
+  const [calendarDisplay, setCalendarDisplay] = useState('none');
 
   function hideCalendar() {
     if (calendarDisplay === 'block') {
@@ -178,8 +178,9 @@ function HabitController(props){
       return (
         <div className='fullBody'>
 
-        <h1 className='title' style={{display: `${displayTitle}`}} onClick={hideTitle}>myForest</h1>
-
+          <div className='titleDiv'>
+            <h1 className='title' style={{display: `${displayTitle}`}} onClick={hideTitle}>myForest</h1>
+          </div>
 
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
