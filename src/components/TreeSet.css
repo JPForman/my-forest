@@ -1,3 +1,13 @@
+.infoDiv{
+  background-color: grey;
+  border: 3px solid black;
+  width: 25vh;
+  color: white;
+  padding: 4px;
+  opacity: 0.7;
+  text-align: center;
+}
+
 .tree {
   position: absolute;
 }
