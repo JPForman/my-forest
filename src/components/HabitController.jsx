@@ -53,9 +53,6 @@ function HabitController(props){
   //   console.log('before slice habitEventList', habitEventList);
   // }
 
-  function handleSpecialNote(specialNote){
-
-  }
   const [specialNote, setSpecialNote] = useState('');
 
   function handleAddHabitEvent(event) {
@@ -170,13 +167,19 @@ function HabitController(props){
           return;
         }
 
-// <div className="hideCalendarDiv" onClick={hideCalendar}></div>
-// <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
-//   <CalendarReact className='calendar' toggle={toggle}/>
-// </div>
+        const [displayTitle, setDisplayTitle] = useState('block');
+
+          function hideTitle(){
+            if (displayTitle === 'block') {
+              setDisplayTitle('none'); }
+            }
+
 
       return (
         <div className='fullBody'>
+
+        <h1 className='title' style={{display: `${displayTitle}`}} onClick={hideTitle}>myForest</h1>
+
 
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
