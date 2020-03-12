@@ -75,7 +75,6 @@ function HabitController(props){
       grassRight: grassRight,
       grassTop: grassTop,
       specialNote: specialNote,
-
     }
 
     setHabitEventList(habitEventList => [...habitEventList, newHabit]);

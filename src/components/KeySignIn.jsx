@@ -36,7 +36,7 @@ function KeySignIn(habitEventList){
           <CardText>enter your password to see your secret key</CardText>
           <FormGroup>
             <Label >password</Label>
-            <Input type="text" name="password" id="examplePassword" placeholder="enter password here" />
+            <Input type="password" name="password" id="examplePassword" placeholder="enter password here" />
           </FormGroup>
           <Button onClick={ToggleKey} color="secondary">Button</Button>
         </Card>
