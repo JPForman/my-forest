@@ -1,0 +1,17 @@
+.title{
+  position: absolute;
+  font-family: monospace;
+  /* margin-left: 50%; */
+  font-size: 32vh;
+}
+
+.titleDiv{
+  position: absolute;
+  /* margin-left: 50%; */
+}
+
+.welcome{
+  font-family: monospace;
+  width: 30vh;
+  height: auto;
+}

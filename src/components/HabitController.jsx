@@ -5,6 +5,7 @@ import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
 import KeySignIn from './KeySignIn';
 import keyHole from './images/keyhole.png';
+import Opener from './Opener';
 
 
 
@@ -167,20 +168,15 @@ function HabitController(props){
           return;
         }
 
-        const [displayTitle, setDisplayTitle] = useState('block');
 
-          function hideTitle(){
-            if (displayTitle === 'block') {
-              setDisplayTitle('none'); }
-            }
+
 
 
       return (
         <div className='fullBody'>
 
-          <div className='titleDiv'>
-            <h1 className='title' style={{display: `${displayTitle}`}} onClick={hideTitle}>myForest</h1>
-          </div>
+          <Opener />
+
 
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
