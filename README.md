@@ -1,23 +1,5 @@
 # _myForest_
 
-TimeRecord  
-Friday Feb 28  
-8-9 --- Whiteboard and started building a calendar  
-9-10 --- Broke everything and restarted (losing git history as i only had local commits and didn't push before deleting)  
-10-11 --- Researched environment
-11-12 --- Rebuild
-12-12:30 --- update environment  
-12:30-1:30 --- Webpack issues
-1:30-2:30 --- Research and partial calendar  
-3:30-5 --- Calendar tutorial
-
-As you can see I had a bit of a rough start on Friday. I just kept at it and things finally worked out to a place that I feel I made progress. I know my commit history is kinda shotty, which is abnormal, but I had a few complete rebuilds that I just wanted in a different repo. My first submission has one of the earliest commits (https://github.com/JPForman/myForest.git , the earliest was deleted locally). Sorry for the confusion. I assure you I put in the hours from 8am-5, and most of the weekend thereafter.  
-
-In terms of where my project status is, I have successfully built a calendar and created a visual landscape with tree components iterated through state input. I plan on connecting calendar based input with tree iteration (associating coordinates with date). From there I will create user authentication and connect the storage of data onto a database. Further features include the introduction of more elements (eg grass, flowers, etc.), classic graphs of personal data, birds flying in the functions of tracked data.  
-
-
-
-
 
 #### _This is an application for tracking personal data in a visual way._
 
@@ -27,7 +9,6 @@ In terms of where my project status is, I have successfully built a calendar and
 
 _This is an application for tracking personal data in a visual way. The user will be able to input data for any day and the forest will grow in relation._
 
-_https://github.com/JPForman/Ganesha-Kambucha.git_
 
 ## Setup/Installation Requirements
 
@@ -39,7 +20,7 @@ _https://github.com/JPForman/Ganesha-Kambucha.git_
 
 * _$ npm run start (browser will open to localhost:3000)_  
 
-
+or go to https://dry-forest-61437.herokuapp.com/#/ to view the site live
 
 ## Components
 
@@ -54,9 +35,16 @@ made at https://www.draw.io/
 
 * _The application allows the user to view, update, and create a forest based on date associated data input._
 
-## Known Bugs
-
-_a lot_
+## Known Bugs  
+_needs recall date functionality to update or delete events_
+_needs user auth and personalized data_
+_needs database for persistent data_
+_needs more scopes_
+_needs media query work_
+_needs major code refactoring_
+_needs more cute quirky buttons_
+_needs month and day views_
+_ultimately, this is a cute application, but it still needs a lot_
 
 
 ## Support and contact details
