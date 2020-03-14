@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormGroup, Label, Input, Card, Button, CardTitle, CardText } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Card, Button, CardTitle, CardText } from 'reactstrap';
 import './KeySignIn.css';
 
 
@@ -27,6 +27,24 @@ function KeySignIn(habitEventList){
     ToggleSignInKey();
     }
 
+  const [treeKey, setTreeKey] = useState('growing strong');
+
+  function ResetTreeKey(treeKeyInput){
+    setTreeKey(treeKeyInput);
+  }
+
+  const [grassKey, setGrassKey] = useState('my seeds');
+
+  function ResetGrassKey(grassKeyInput){
+    setGrassKey(grassKeyInput);
+  }
+
+  const [flowerKey, setFlowerKey] = useState('forget me not');
+
+  function ResetFlowerKey(flowerKeyInput){
+    setFlowerKey(flowerKeyInput);
+  }
+
   return(
     <div>
 
@@ -44,10 +62,31 @@ function KeySignIn(habitEventList){
 
       <div className='keyCards' style={{display: `${keyDisplay}`}}>
         <Card body outline color="warning">
-          <CardTitle>Key</CardTitle>
-          <CardText>Trees mean:</CardText>
-          <CardText>Grass means:</CardText>
-          <CardText>Flowers mean:</CardText>
+          <CardTitle>my secret forest key</CardTitle>
+          <div className='keys'>
+            <Input
+              type="text"
+              className="input"
+              name="treeKeyInput"
+              onChange={e=>ResetTreeKey(e.target.value)}
+              placeholder="tree meaning :)" />
+
+            <Input
+              type="text"
+              className="input"
+              name="grassKeyInput"
+              onChange={e=>ResetGrassKey(e.target.value)}
+              placeholder="your wisp of grass" />
+
+              <Input
+                type="text"
+                className="input"
+                name="flowerKeyInput"
+                onChange={e=>ResetFlowerKey(e.target.value)}
+                placeholder="flowers" />
+            </div>
+
+          <CardText>a sweet walk around the orchard will reveal the trees to mean {treeKey}. oh, and the flowing grass talks about {grassKey}. flowers appear, and i know about {flowerKey}</CardText>
         </Card>
       </div>
     </div>
@@ -57,3 +96,4 @@ function KeySignIn(habitEventList){
 }
 
 export default KeySignIn;
+// onChange={e=>ResetTreeKey(e.target.value)}

@@ -6,4 +6,14 @@
   height: auto;
   bottom: 2vh;
   right: 10vh;
+  font-family: monospace;
+}
+
+.keys{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.input{
+
 }
