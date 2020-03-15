@@ -1,6 +1,7 @@
 .infoDiv{
   background-color: grey;
   border: 3px solid black;
+  border-radius: 5px;
   width: 25vh;
   color: white;
   padding: 4px;
@@ -14,4 +15,5 @@
 
 .treeInfo{
   position: absolute;
+
 }

@@ -34,7 +34,7 @@ function HabitController(props){
     } else {
       cSelected.splice(index, 1);
     }
-    console.log('cSelected: ', cSelected);
+    // console.log('cSelected: ', cSelected);
     setCSelected([...cSelected]);
   }
 
@@ -43,14 +43,15 @@ function HabitController(props){
   //   console.log('this date exists!');
   //   console.log('before slice habitEventList', habitEventList);
   //   let repeatDateIndex = habitEventList.findIndex(x=>x.date === dateTitle)
-  //   let slicedList = habitEventList.slice(repeatDateIndex, repeatDateIndex+1)
-  //   let newHabit = {
-  //     date: dateTitle,
-  //     tree: cSelected.includes('a tree'),
-  //     flower: cSelected.includes('a flower'),
-  //     grass: cSelected.includes('some grass'),
-  //   }
-  //   setHabitEventList(habitEventList => [slicedList, newHabit]);
+    // let slicedList = habitEventList.slice(repeatDateIndex, repeatDateIndex+1)
+    // let newHabit = {
+    //   date: dateTitle,
+    //   tree: cSelected.includes('a tree'),
+    //   flower: cSelected.includes('a flower'),
+    //   grass: cSelected.includes('some grass'),
+    // }
+
+    // setHabitEventList(habitEventList => [slicedList, newHabit]);
   //   console.log('before slice habitEventList', habitEventList);
   // }
 
