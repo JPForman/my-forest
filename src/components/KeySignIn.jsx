@@ -27,19 +27,19 @@ function KeySignIn(habitEventList){
     ToggleSignInKey();
     }
 
-  const [treeKey, setTreeKey] = useState('growing strong');
+  const [treeKey, setTreeKey] = useState('finished a book');
 
   function ResetTreeKey(treeKeyInput){
     setTreeKey(treeKeyInput);
   }
 
-  const [grassKey, setGrassKey] = useState('my seeds');
+  const [grassKey, setGrassKey] = useState('practiced yoga');
 
   function ResetGrassKey(grassKeyInput){
     setGrassKey(grassKeyInput);
   }
 
-  const [flowerKey, setFlowerKey] = useState('forget me not');
+  const [flowerKey, setFlowerKey] = useState('worked on my art');
 
   function ResetFlowerKey(flowerKeyInput){
     setFlowerKey(flowerKeyInput);
@@ -86,7 +86,7 @@ function KeySignIn(habitEventList){
                 placeholder="flowers" />
             </div>
 
-          <CardText>a sweet walk around the orchard will reveal the trees to mean {treeKey}. oh, and the flowing grass talks about {grassKey}. flowers appear, and i know about {flowerKey}</CardText>
+          <CardText>a sweet walk around the orchard will reveal the trees to whisper about a day i {treeKey}. oh, and the flowing grass talks about days i {grassKey}. flowers appear, and i can remember a time when i {flowerKey}</CardText>
         </Card>
       </div>
     </div>
