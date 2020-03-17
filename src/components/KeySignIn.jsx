@@ -51,7 +51,7 @@ function KeySignIn(habitEventList){
       <div className='keyCards' style={{display: `${keySignInDisplay}`}}>
         <Card body outline color="warning">
           <CardTitle>view your secret key???</CardTitle>
-          <CardText>enter your password to see your secret key</CardText>
+          <CardText>enter your password to view your secret key</CardText>
           <FormGroup>
             <Label >password</Label>
             <Input type="password" name="password" id="examplePassword" placeholder="enter password here" />

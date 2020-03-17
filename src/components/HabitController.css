@@ -36,9 +36,9 @@
 
 .eventModal{
   background-color: #994d00;
-  border-radius: 5px;
   color: white;
   border: 12px solid #4d2600;
+  border-radius: 5px;
   padding: 2vh;
   height: 50vh;
 }
