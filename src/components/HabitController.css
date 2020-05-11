@@ -188,7 +188,19 @@
   text-align: center;
 }
 
-
+.toggleOpenerButton{
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 10vh 5vh 10vh;
+  border-color: transparent transparent rgb(132, 87, 87) transparent;
+  border-top-left-radius: 126%;
+  border-bottom-right-radius: 15%;
+  position: absolute;
+  left: 10vh;
+  bottom: 10vh;
+  
+}
 
 .treeTally{
   width: 100%;

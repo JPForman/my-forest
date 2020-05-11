@@ -177,6 +177,7 @@ function HabitController(props){
 
           <Opener />
 
+          <div className='toggleOpenerButton' onClick={toggleOpener}></div>
 
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
