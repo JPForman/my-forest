@@ -170,14 +170,12 @@ function HabitController(props){
 
 
 
-
-
       return (
         <div className='fullBody'>
 
           <Opener />
 
-          <div className='toggleOpenerButton' onClick={toggleOpener}></div>
+
 
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 

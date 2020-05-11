@@ -3,27 +3,44 @@ import './Opener.css';
 import grass from "./images/grass.png"
 import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap';
 
-function Opener(habitEventList){
+function Opener(){
+  console.log('toggleOpener = ', toggleOpener)
 
 
+  // const [displayTitle, setDisplayTitle] = useState('block');
+  // const [displayWelcome, setDisplayWelcome] = useState('none');
+
+  // function toggleOpener(){
+  //   if (displayTitle === 'block') {
+  //     setDisplayTitle('none');
+  //     setDisplayWelcome('block'); }
+  //   else if(displayWelcome === 'block') {
+  //     setDisplayWelcome('none');
+  //   }
+  // }
 
   const [displayTitle, setDisplayTitle] = useState('block');
   const [displayWelcome, setDisplayWelcome] = useState('none');
 
-  function hideTitle(){
+function toggleOpener() {
+    console.log('opener toggle in hc')
     if (displayTitle === 'block') {
       setDisplayTitle('none');
       setDisplayWelcome('block'); }
+    else if(displayWelcome === 'block') {
+      setDisplayWelcome('none');
+    }else if(displayTitle === 'none' && displayWelcome === 'none'){
+      setDisplayTitle('block');
     }
-
+  }
 
 
   return(
     <div>
       <div className='titleDiv'>
-        <h1 className='title' style={{display: `${displayTitle}`}} onClick={hideTitle}>myForest</h1>
+        <h1 className='title' style={{display: `${displayTitle}`}} onClick={toggleOpener}>myForest</h1>
 
-          <Card onClick={()=> setDisplayWelcome('none')} className='welcome' style={{display: `${displayWelcome}`}}>
+          <Card onClick={toggleOpener} className='welcome' style={{display: `${displayWelcome}`}}>
               <CardText>welcome to myForest.
               <br></br>
               <br></br>
@@ -38,9 +55,11 @@ function Opener(habitEventList){
               <br></br>
               this is so you can look at your life like a forest
             </CardText>
+
           </Card>
 
       </div>
+      <div className='toggleOpenerButton' onClick={toggleOpener}></div>
     </div>
   )
 }
