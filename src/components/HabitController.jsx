@@ -113,20 +113,33 @@ function HabitController(props){
       const toggleCollapse = () => setIsOpen(!isOpen);
 
       const [treeTotal, setTreeTotal] = useState(0)
+      const [treePercent, setTreePercent] = useState(0)
       const [grassTotal, setGrassTotal] = useState(0)
+      const [grassPercent, setGrassPercent] = useState(0)
       const [flowerTotal, setFlowerTotal] = useState(0)
+      const [flowerPercent, setFlowerPercent] = useState(0)
 
       function toggleTallySheet(habitEventList) {
         let treeBools = habitEventList.map(function (habit) {
           return habit.tree; });
         let tempTreeSum = (treeBools.filter(a => a !== false)).length;
         setTreeTotal(tempTreeSum);
+        if(tempTreeSum>0){
+          let tempTreePercent = Math.round((treeTotal/habitEventList.length)*100)
+          setTreePercent(tempTreePercent);
+        }
+        
+        Math.round((treeTotal/habitEventList.length)*100)
 
         let grassBools = habitEventList.map(function (habit) {
           return habit.grass; });
           console.log('grassBools: ', grassBools);
         let tempGrassSum = (grassBools.filter(a => a !== false)).length;
         setGrassTotal(tempGrassSum);
+        if(tempGrassSum>0){
+          let tempGrassPercent = Math.round((grassTotal/habitEventList.length)*100)
+          setGrassPercent(tempGrassPercent);
+        }
 
         let flowerBools = habitEventList.map(function (habit) {
           return habit.flower; });
@@ -134,6 +147,10 @@ function HabitController(props){
         let tempFlowerSum = (flowerBools.filter(a => a !== false)).length;
         console.log('TEMPFLOWERSUM: ', tempFlowerSum);
         setFlowerTotal(tempFlowerSum);
+        if(tempFlowerSum>0){
+          let tempFlowerPercent = Math.round((flowerTotal/habitEventList.length)*100)
+          setFlowerPercent(tempFlowerPercent);
+        }
 
         toggleCollapse();
         }
@@ -232,17 +249,17 @@ function HabitController(props){
 
                         <div className="treeTally">
                           <h3>Total Trees: {treeTotal} </h3>
-                          <h5>Percentage of Marked Days With Trees: {Math.round((treeTotal/habitEventList.length)*100)}%</h5>
+                          <h5>Percentage of Marked Days With Trees: {treePercent}%</h5>
                         </div>
 
                         <div className="flowerTally">
                         <h3>Total Flowers: {flowerTotal} </h3>
-                        <h5>Percentage of Marked Days With Flowers: {Math.round((flowerTotal/habitEventList.length)*100)}%</h5>
+                        <h5>Percentage of Marked Days With Flowers: {flowerPercent}%</h5>
                         </div>
 
                         <div className='grassTally'>
                         <h3>Total Grass: {grassTotal} </h3>
-                        <h5>Percentage of Marked Days With Grass: {Math.round((grassTotal/habitEventList.length)*100)}%</h5>
+                        <h5>Percentage of Marked Days With Grass: {grassPercent}%</h5>
                         </div>
                       </div>
                   </CardBody>
