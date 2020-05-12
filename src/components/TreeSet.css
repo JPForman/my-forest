@@ -1,20 +1,22 @@
+.tree {
+  position: absolute;
+  width: 100vh;
+}
+
 .infoDiv{
+  position: absolute;
   background-color: grey;
   border: 3px solid black;
   border-radius: 5px;
-  width: 100%;
   color: white;
-  padding: 4px;
+  padding: 6px;
   opacity: 0.7;
   text-align: center;
 }
 
-.tree {
-  position: absolute;
-  width: 100%;
-}
 
 .treeInfo{
-  position: absolute;
+  width: 100%;
+  /* position: absolute; */
   font-family: monospace;
 }
