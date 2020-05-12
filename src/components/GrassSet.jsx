@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MyTree from './MyTree';
 import './GrassSet.css';
 import grass from "./images/grass.png"
 
 function GrassSet(habitEventList){
+
+  const [grassInfoDisplay, setGrassInfoDisplay] = useState('none');
+
+  function ToggleGrassInfo() {
+    if (grassInfoDisplay === 'block') {
+      setGrassInfoDisplay('none'); }
+      else if(grassInfoDisplay === 'none') {
+        setGrassInfoDisplay('block');
+      }
+    }
 
     return(
       <div>
@@ -16,7 +26,17 @@ function GrassSet(habitEventList){
                   transform:'scale(0.1)',
                   right:`${value.grassRight}vh`,
                   top:`${value.grassTop}vh`}}>
-                <img src={grass}></img>
+                <div onClick={()=>ToggleGrassInfo()}>
+                  <img src={grass}></img>
+                </div>
+
+                <div className='grassInfo' style={{display:`${grassInfoDisplay}`}}>
+                  <div className='grassInfoDiv'>
+                    <h4>{value.date.slice(0, 10)}</h4>
+                    <h4>{value.specialGrassNote}</h4>
+                  </div>
+                </div>
+
               </div>
             )
           }

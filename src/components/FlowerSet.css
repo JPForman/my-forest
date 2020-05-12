@@ -3,7 +3,7 @@
   width: 100vh;
   height: 100vh;
   transform: scale(.07);
-
+  font-family: monospace;
 }
 
 
@@ -24,7 +24,7 @@
   padding: 4px;
   margin-bottom: 20%;
   position: relative;
-  bottom: 1405px;
+  bottom: 1205px;
   left: 300px;
 
 }
