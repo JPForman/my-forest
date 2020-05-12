@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FlowerSet.css';
 import flower from "./images/flower.png"
 
 function GrassSet(habitEventList){
+
+  const [flowerInfoDisplay, setFlowerInfoDisplay] = useState('none');
+
+  function ToggleFlowerInfo() {
+    if (flowerInfoDisplay === 'block') {
+      setFlowerInfoDisplay('none'); }
+      else if(flowerInfoDisplay === 'none') {
+        setFlowerInfoDisplay('block');
+      }
+    }
 
     return(
       <div>
@@ -16,7 +26,18 @@ function GrassSet(habitEventList){
                 <div className='flower' style={{
                     right:`${180*Math.random()-40}vh`,
                     top:`${40*Math.random()-15}vh`}}>
+                <div onClick={()=>ToggleFlowerInfo()}>
                   <img src={flower}></img>
+                </div>
+
+
+                <div className='flowerInfo' style={{display:`${flowerInfoDisplay}`}}>
+                  <div className='flowerInfoDiv'>
+                    <h4>{value.date.slice(0, 10)}</h4>
+                    <h4>{value.specialFlowerNote}</h4>
+                  </div>
+                </div>
+
                 </div>
               </div>
             )

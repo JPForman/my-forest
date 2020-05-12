@@ -33,9 +33,9 @@ function TreeSet(habitEventList){
 
                 <div className='treeInfo' style={{display:`${treeInfoDisplay}`}}>
                   <div className='infoDiv'>
-                  <h4>{value.date.slice(0, 10)}</h4>
-                  <h4>{value.specialTreeNote}</h4>
-                </div>
+                    <h4>{value.date.slice(0, 10)}</h4>
+                    <h4>{value.specialTreeNote}</h4>
+                  </div>
                 </div>
               </div>
             )
