@@ -22,6 +22,7 @@
   left: 10vh;
   bottom: 10vh;
   z-index: 0;
+  cursor: pointer;
 }
 
 .welcome{

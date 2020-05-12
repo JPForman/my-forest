@@ -1,3 +1,5 @@
+
+
 .calendarReact{
   z-index: 1;
 }
@@ -41,6 +43,7 @@
   border-radius: 5px;
   padding: 2vh;
   height: 50vh;
+  font-family: monospace;
 }
 
 .flowerTally{
@@ -181,6 +184,7 @@
   background-color: grey;
   border: 5px solid brown;
   border-radius: 5px;
+  font-family: monospace;
 }
 
 .tallyTitle{
