@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import MyTree from './MyTree';
 // import YearForest from './YearForest';
 import HabitController from './HabitController';
-import CalendarReact from './CalendarReact';
+import Login from './Login';
 
 
 class App extends React.Component {
@@ -15,6 +15,7 @@ render(){
 
     return (
       <div className='app'>
+        <Login />
         <HabitController />
       </div>
     );
