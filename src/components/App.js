@@ -6,21 +6,25 @@ import HabitController from './HabitController';
 import Login from './Login';
 
 
-class App extends React.Component {
+function App() {
 
+  const [habitControllerDisplay, setHabitControllerDisplay] = useState('none');
+  const [loginDisplay, setLoginDisplay] = useState('block');
 
-render(){
+  return (
+    <div className='app'>
+      <div className='loginDisplay' style={{display: `${loginDisplay}`}}>
+        <Login setHabitControllerDisplay={setHabitControllerDisplay} setLoginDisplay={setLoginDisplay}/>
+      </div>
 
-
-
-    return (
-      <div className='app'>
-        <Login />
+      <div className='habitControllerDisplay' style={{display: `${habitControllerDisplay}`}}>
         <HabitController />
       </div>
-    );
-  }
+
+    </div>
+  );
 }
+
 
 export default App;
 

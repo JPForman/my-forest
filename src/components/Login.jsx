@@ -3,14 +3,15 @@ import { Form, Input, } from 'reactstrap';
 import './Login.css';
 
 
-function Login(){
+function Login({setHabitControllerDisplay, setLoginDisplay}){
 
   const [givenLoginID, setGivenLoginID] = useState('');
   const [givenLoginPassword, setGivenLoginPassword] = useState('');
 
   function checkLogin(givenLoginID, givenLoginPassword){
     //does a check
-
+    setHabitControllerDisplay('block');
+    setLoginDisplay('none');
   }
 
   
