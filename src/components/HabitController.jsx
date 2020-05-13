@@ -239,15 +239,15 @@ function HabitController(props){
 
                 <Input
                   type="text"
-                  name="specialNote"
-                  onChange={e=> setSpecialGrassNote(e.target.value)}
-                  placeholder="special grass note?" />
-
-                <Input
-                  type="text"
                   name="specialFlowerNote"
                   onChange={e=> setSpecialFlowerNote(e.target.value)}
                   placeholder="special flower note?" />
+
+                <Input
+                  type="text"
+                  name="specialNote"
+                  onChange={e=> setSpecialGrassNote(e.target.value)}
+                  placeholder="special grass note?" />
 
                   <button className='submitModal' type='submit' value='submit'>true</button>
 
