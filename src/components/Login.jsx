@@ -20,19 +20,17 @@ function Login({setHabitControllerDisplay, setLoginDisplay}){
     <div className='loginWrapper'>
       <div className='login'>
         <img src={titleImg} className='titleImg'></img>
-        <Form onSubmit={checkLogin}>
+        <Form onSubmit={checkLogin} className='loginForm'>
           <Input
             type="text"
             className='givenLoginID'
-            name="givenLoginID"
             onChange={e=> setGivenLoginID(e.target.value)}
             placeholder="Login ID" />
           <Input
-            type="text"
+            type="password"
             className='givenLoginPassword'
-            name="givenLoginPassword"
             onChange={e=> setGivenLoginPassword(e.target.value)}
-            placeholder="Login ID" />
+            placeholder="Password" />
           <button className='submitLogin' type='submit' value='submit'>submit</button>
         </Form>
       </div>

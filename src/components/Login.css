@@ -1,3 +1,7 @@
+.givenLoginPassword{
+ padding: 4px; 
+}
+
 .loginWrapper{
   font-family: monospace;
   width: 100vw;
@@ -8,11 +12,16 @@
 }
 
 .login{
-  border: 4px solid rgb(49, 108, 133);
+  border: 4px solid rgba(9, 79, 51, 0.27);
   border-radius: 5px;
   width: 30%;
-  
 }
+
+.loginForm{
+  padding: 6px;
+}
+
+
 
 .titleImg{
   width: 100%;
