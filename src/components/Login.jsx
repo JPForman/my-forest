@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './Login.css';
 import titleImg from './images/titleImg.png';
 
@@ -31,7 +32,9 @@ function Login({setHabitControllerDisplay, setLoginDisplay}){
             className='givenLoginPassword'
             onChange={e=> setGivenLoginPassword(e.target.value)}
             placeholder="Password" />
+            <Link to='/myForest'>
           <button className='submitLogin' type='submit' value='submit'>submit</button>
+          </Link>
         </Form>
       </div>
     </div>

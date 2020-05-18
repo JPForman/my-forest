@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import ReactDOM from "react-dom";
 import MyTree from './MyTree';
 // import YearForest from './YearForest';
@@ -13,13 +14,12 @@ function App() {
 
   return (
     <div className='app'>
-      <div className='loginDisplay' style={{display: `${loginDisplay}`}}>
-        <Login setHabitControllerDisplay={setHabitControllerDisplay} setLoginDisplay={setLoginDisplay}/>
-      </div>
 
-      <div className='habitControllerDisplay' style={{display: `${habitControllerDisplay}`}}>
-        <HabitController />
-      </div>
+
+      <Switch>
+        <Route exact path='/' render={()=> <Login />}/>
+        <Route exact path='/myForest' render={()=> <HabitController />}/>
+      </Switch>
 
     </div>
   );
