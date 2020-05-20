@@ -11,14 +11,8 @@ export default function EventModal({modal, toggle, dateTitle, handleAddHabitEven
                 <div className='modalButtons'>
                   <ButtonGroup>
                     <Button className='modalButton modalTreeButton' onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
-
-
                     <Button className='modalButton modalFlowerButton' onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
-
-
                     <Button className='modalButton' onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
-
-
                   </ButtonGroup>
                 </div>
 

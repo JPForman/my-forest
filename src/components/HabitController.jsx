@@ -15,6 +15,8 @@ function HabitController(props){
   // Master Habit Event List
   const [habitEventList, setHabitEventList] = useState([]);
 
+
+
   // Event Modal Stuff
   const [modal, setModal] = useState(false);
   const [dateTitle, setDateTitle] = useState('');
@@ -25,7 +27,7 @@ function HabitController(props){
     setModal(!modal);
   }
 
-  // Checkbox Form Stuff
+  // Event Checkbox Form
   const [cSelected, setCSelected] = useState([]);
 
   const onCheckboxBtnClick = (selected) => {
@@ -35,16 +37,16 @@ function HabitController(props){
     } else {
       cSelected.splice(index, 1);
     }
-    // console.log('cSelected: ', cSelected);
     setCSelected([...cSelected]);
   }
 
-
-
+  // Event Special Note Form Hooks
   const [specialTreeNote, setSpecialTreeNote] = useState('');
   const [specialFlowerNote, setSpecialFlowerNote] = useState('');
   const [specialGrassNote, setSpecialGrassNote] = useState('');
 
+
+  // New Event
   function handleAddHabitEvent(event) {
     event.preventDefault();
 
@@ -74,9 +76,10 @@ function HabitController(props){
     setSpecialGrassNote('');
     setSpecialFlowerNote('');
     setSpecialTreeNote('');
-
   }
 
+
+  // Calendar Display
   const [calendarDisplay, setCalendarDisplay] = useState('none');
 
   function hideCalendar() {
@@ -88,20 +91,8 @@ function HabitController(props){
     }
 
 
-    const [tallySheetDisplay, setTallySheetDisplay] = useState('block');
-
-    function hideTallySheet() {
-      console.log('hi DE tallySheet :)');
-      if (tallySheetDisplay === 'block') {
-        setTallySheetDisplay('none'); }
-        else if(tallySheetDisplay === 'none') {
-          setTallySheetDisplay('block');
-        }
-      }
-
-// Tally Sheet Collapse Logic
+// Tally Sheet Display
       const [isOpen, setIsOpen] = useState(false);
-
       const toggleCollapse = () => setIsOpen(!isOpen);
 
       const [treeTotal, setTreeTotal] = useState(0)
@@ -120,8 +111,6 @@ function HabitController(props){
           let tempTreePercent = Math.round((treeTotal/habitEventList.length)*100)
           setTreePercent(tempTreePercent);
         }
-        
-        Math.round((treeTotal/habitEventList.length)*100)
 
         let grassBools = habitEventList.map(function(habit) {
           return habit.grass; });
@@ -147,7 +136,7 @@ function HabitController(props){
       }
 
 
-
+// Toggle Secret Key Display
 
         const [keyDisplay, setkeyDisplay] = useState('none');
 
@@ -159,6 +148,8 @@ function HabitController(props){
             }
           }
 
+
+// Unused code to find matching Date Event
         function preSelectedDate(newHabit){
           console.log('preSelectedDate dateTitle: ', dateTitle);
           console.log('preSelectedDate habitEventList: ', habitEventList);
@@ -227,30 +218,8 @@ function HabitController(props){
             <KeySignIn />
           </div>
 
-
-
-
-
         </div>
       );
     }
 
     export default HabitController;
-
-
-      //  TRYING TO FIGURE OUT DUPLICATE DATES
-  // if(habitEventList.find(x=>x.date === dateTitle)) {
-  //   console.log('this date exists!');
-  //   console.log('before slice habitEventList', habitEventList);
-  //   let repeatDateIndex = habitEventList.findIndex(x=>x.date === dateTitle)
-    // let slicedList = habitEventList.slice(repeatDateIndex, repeatDateIndex+1)
-    // let newHabit = {
-    //   date: dateTitle,
-    //   tree: cSelected.includes('a tree'),
-    //   flower: cSelected.includes('a flower'),
-    //   grass: cSelected.includes('some grass'),
-    // }
-
-    // setHabitEventList(habitEventList => [slicedList, newHabit]);
-  //   console.log('before slice habitEventList', habitEventList);
-  // }
