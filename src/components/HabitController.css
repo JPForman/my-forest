@@ -143,7 +143,9 @@
 .modalForm{
   display: flex;
   flex-direction: column;
+  width: 500px;
 }
+
 
 .keyHole{
   position: absolute;

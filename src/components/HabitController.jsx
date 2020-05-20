@@ -183,7 +183,8 @@ function HabitController(props){
             <CalendarReact className='calendar' toggle={toggle} preSelectedDate={preSelectedDate()}/>
           </div>
 
-          <EventModal 
+
+          <EventModal
             modal={modal}
             toggle={toggle} 
             dateTitle={dateTitle}

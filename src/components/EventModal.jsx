@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Input, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, Collapse, CardBody, Card } from 'reactstrap';
+import './HabitController.css';
 
 export default function EventModal({modal, toggle, dateTitle, handleAddHabitEvent, cSelected, setSpecialTreeNote, setSpecialFlowerNote, setSpecialGrassNote, onCheckboxBtnClick}) {
   return (
-    <div>
+    <div className="modalWrapper">
       <Modal isOpen={modal} toggle={toggle} >
             <div className='eventModal'>
               <p>the sweet day of {dateTitle.toLowerCase()} deserves the following</p>
