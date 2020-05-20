@@ -15,7 +15,7 @@ function HabitController(props){
   // Master Habit Event List
   const [habitEventList, setHabitEventList] = useState([]);
 
-  // Modal Stuff
+  // Event Modal Stuff
   const [modal, setModal] = useState(false);
   const [dateTitle, setDateTitle] = useState('');
 
@@ -112,7 +112,7 @@ function HabitController(props){
       const [flowerPercent, setFlowerPercent] = useState(0)
 
       function toggleTallySheet(habitEventList) {
-        let treeBools = habitEventList.map(function (habit) {
+        let treeBools = habitEventList.map(function(habit) {
           return habit.tree; });
         let tempTreeSum = (treeBools.filter(a => a !== false)).length;
         setTreeTotal(tempTreeSum);
@@ -123,7 +123,7 @@ function HabitController(props){
         
         Math.round((treeTotal/habitEventList.length)*100)
 
-        let grassBools = habitEventList.map(function (habit) {
+        let grassBools = habitEventList.map(function(habit) {
           return habit.grass; });
           console.log('grassBools: ', grassBools);
         let tempGrassSum = (grassBools.filter(a => a !== false)).length;
@@ -133,7 +133,7 @@ function HabitController(props){
           setGrassPercent(tempGrassPercent);
         }
 
-        let flowerBools = habitEventList.map(function (habit) {
+        let flowerBools = habitEventList.map(function(habit) {
           return habit.flower; });
           console.log('flowerBools: ', flowerBools);
         let tempFlowerSum = (flowerBools.filter(a => a !== false)).length;
@@ -143,9 +143,8 @@ function HabitController(props){
           let tempFlowerPercent = Math.round((flowerTotal/habitEventList.length)*100)
           setFlowerPercent(tempFlowerPercent);
         }
-
         toggleCollapse();
-        }
+      }
 
 
 
@@ -216,7 +215,7 @@ function HabitController(props){
               isOpen={isOpen} 
               treePercent={treePercent} 
               flowerPercent={flowerPercent} 
-              grassTotal={grassTotal} />
+              grassPercent={grassPercent} />
           </div>
 
 
