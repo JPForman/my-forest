@@ -6,6 +6,7 @@ import YearForest from './YearForest';
 import KeySignIn from './KeySignIn';
 import keyHole from './images/keyhole.png';
 import Opener from './Opener';
+import TallySheet from './TallySheet.jsx';
 
 
 
@@ -267,30 +268,14 @@ function HabitController(props){
           <div onClick={()=>toggleTallySheet(habitEventList)} habitEventList={habitEventList}>
             <div className='cloudPart1'></div>
             <div className='cloudPart2'></div>
-              <Collapse isOpen={isOpen}>
-                <Card>
-                  <CardBody>
-                      <div className='tallySheet'>
-                        <h1 className='tallyTitle'>TallySheet</h1>
-
-                        <div className="treeTally">
-                          <h3>Total Trees: {treeTotal} </h3>
-                          <h5>Percentage of Marked Days With Trees: {treePercent}%</h5>
-                        </div>
-
-                        <div className="flowerTally">
-                        <h3>Total Flowers: {flowerTotal} </h3>
-                        <h5>Percentage of Marked Days With Flowers: {flowerPercent}%</h5>
-                        </div>
-
-                        <div className='grassTally'>
-                        <h3>Total Grass: {grassTotal} </h3>
-                        <h5>Percentage of Marked Days With Grass: {grassPercent}%</h5>
-                        </div>
-                      </div>
-                  </CardBody>
-                </Card>
-              </Collapse>
+            <TallySheet 
+              treeTotal={treeTotal} 
+              flowerTotal={flowerTotal} 
+              grassTotal={grassTotal} 
+              isOpen={isOpen} 
+              treePercent={treePercent} 
+              flowerPercent={flowerPercent} 
+              grassTotal={grassTotal} />
           </div>
 
 
