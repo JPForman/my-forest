@@ -6,7 +6,7 @@ export default function TallySheet({treeTotal, flowerTotal, grassTotal, treePerc
   return (
     <div>
       <Collapse isOpen={isOpen}>
-        <Card>
+        <Card  className='tallyCard'>
           <CardBody>
               <div className='tallySheet'>
                 <h1 className='tallyTitle'>TallySheet</h1>

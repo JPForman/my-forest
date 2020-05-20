@@ -185,11 +185,16 @@
   border-radius: 5px;
 }
 
+.tallyCard{
+  width: 30%;
+}
+
 .tallySheet {
   background-color: grey;
   border: 5px solid brown;
   border-radius: 5px;
   font-family: monospace;
+  width: 100%;
 }
 
 .tallyTitle{
