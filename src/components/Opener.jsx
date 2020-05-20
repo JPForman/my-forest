@@ -4,20 +4,7 @@ import grass from "./images/grass.png"
 import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap';
 
 function Opener(){
-  console.log('toggleOpener = ', toggleOpener)
 
-
-  // const [displayTitle, setDisplayTitle] = useState('block');
-  // const [displayWelcome, setDisplayWelcome] = useState('none');
-
-  // function toggleOpener(){
-  //   if (displayTitle === 'block') {
-  //     setDisplayTitle('none');
-  //     setDisplayWelcome('block'); }
-  //   else if(displayWelcome === 'block') {
-  //     setDisplayWelcome('none');
-  //   }
-  // }
 
   const [displayTitle, setDisplayTitle] = useState('block');
   const [displayWelcome, setDisplayWelcome] = useState('none');
