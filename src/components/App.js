@@ -5,6 +5,7 @@ import MyTree from './MyTree';
 // import YearForest from './YearForest';
 import HabitController from './HabitController';
 import Login from './Login';
+import './App.css';
 
 
 function App() {

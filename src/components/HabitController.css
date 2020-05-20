@@ -55,8 +55,11 @@
 }
 
 .fullBody{
-  width: 100vh;
-  height: 100vh;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
 }

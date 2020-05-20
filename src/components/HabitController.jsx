@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './HabitController.css';
-import { Button, Input, Modal, ModalHeader, ModalBody, ButtonGroup, ModalFooter, Form, Collapse, CardBody, Card } from 'reactstrap';
 import CalendarReact from './CalendarReact';
 import YearForest from './YearForest';
 import KeySignIn from './KeySignIn';
 import keyHole from './images/keyhole.png';
 import Opener from './Opener';
 import TallySheet from './TallySheet.jsx';
+import EventModal from './EventModal.jsx';
 
 
 
@@ -39,22 +39,7 @@ function HabitController(props){
     setCSelected([...cSelected]);
   }
 
-  //  TRYING TO FIGURE OUT DUPLICATE DATES
-  // if(habitEventList.find(x=>x.date === dateTitle)) {
-  //   console.log('this date exists!');
-  //   console.log('before slice habitEventList', habitEventList);
-  //   let repeatDateIndex = habitEventList.findIndex(x=>x.date === dateTitle)
-    // let slicedList = habitEventList.slice(repeatDateIndex, repeatDateIndex+1)
-    // let newHabit = {
-    //   date: dateTitle,
-    //   tree: cSelected.includes('a tree'),
-    //   flower: cSelected.includes('a flower'),
-    //   grass: cSelected.includes('some grass'),
-    // }
 
-    // setHabitEventList(habitEventList => [slicedList, newHabit]);
-  //   console.log('before slice habitEventList', habitEventList);
-  // }
 
   const [specialTreeNote, setSpecialTreeNote] = useState('');
   const [specialFlowerNote, setSpecialFlowerNote] = useState('');
@@ -199,70 +184,26 @@ function HabitController(props){
 
           <Opener />
 
-
-
           <YearForest habitEventList={habitEventList} className='yearForest'/>
 
           <div className="hideCalendarDiv" onClick={hideCalendar}></div>
           <div onClick={hideCalendar} className='hidedivdiv'></div>
 
-
-            <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
-              <CalendarReact className='calendar' toggle={toggle} preSelectedDate={preSelectedDate()}/>
-            </div>
-
-
-
-          <Modal isOpen={modal} toggle={toggle} >
-            <div className='eventModal'>
-              <p>the sweet day of {dateTitle.toLowerCase()} deserves the following</p>
-              <Form onSubmit={handleAddHabitEvent}>
-                <div className='modalButtons'>
-                  <ButtonGroup>
-                    <Button className='modalButton modalTreeButton' onClick={() => onCheckboxBtnClick('a tree')} active={cSelected.includes(1)}>Add a tree :)</Button>
-
-
-                    <Button className='modalButton modalFlowerButton' onClick={() => onCheckboxBtnClick('a flower')} active={cSelected.includes(2)}>Flower Me</Button>
-
-
-                    <Button className='modalButton' onClick={() => onCheckboxBtnClick('some grass')} active={cSelected.includes(3)}>Grass</Button>
-
-
-                  </ButtonGroup>
-                </div>
-
-                <Input
-                  type="text"
-                  className='specialNote'
-                  name="specialTreeNote"
-                  onChange={e=> setSpecialTreeNote(e.target.value)}
-                  placeholder="special tree note?" />
-
-                <Input
-                  type="text"
-                  name="specialFlowerNote"
-                  onChange={e=> setSpecialFlowerNote(e.target.value)}
-                  placeholder="special flower note?" />
-
-                <Input
-                  type="text"
-                  name="specialNote"
-                  onChange={e=> setSpecialGrassNote(e.target.value)}
-                  placeholder="special grass note?" />
-
-                  <button className='submitModal' type='submit' value='submit'>true</button>
-
-              </Form>
-              <div className='selectedModals'>
-                <h5>lovely</h5>
-                <h5>{cSelected[0]}</h5>
-                <h5>{cSelected[1]}</h5>
-                <h5>{cSelected[2]}</h5>
-              </div>
+          <div className='calendarReact' style={{display: `${calendarDisplay}`}}>
+            <CalendarReact className='calendar' toggle={toggle} preSelectedDate={preSelectedDate()}/>
           </div>
-          </Modal>
 
-
+          <EventModal 
+            modal={modal}
+            toggle={toggle} 
+            dateTitle={dateTitle}
+            handleAddHabitEvent={handleAddHabitEvent}
+            cSelected={cSelected}
+            setSpecialTreeNote={setSpecialTreeNote}
+            setSpecialFlowerNote={setSpecialFlowerNote}
+            setSpecialGrassNote={setSpecialGrassNote}
+            onCheckboxBtnClick={onCheckboxBtnClick}
+          />
 
 
           <div onClick={()=>toggleTallySheet(habitEventList)} habitEventList={habitEventList}>
@@ -296,4 +237,21 @@ function HabitController(props){
     }
 
     export default HabitController;
-    // <TallySheet habitEventList={habitEventList}/>
+
+
+      //  TRYING TO FIGURE OUT DUPLICATE DATES
+  // if(habitEventList.find(x=>x.date === dateTitle)) {
+  //   console.log('this date exists!');
+  //   console.log('before slice habitEventList', habitEventList);
+  //   let repeatDateIndex = habitEventList.findIndex(x=>x.date === dateTitle)
+    // let slicedList = habitEventList.slice(repeatDateIndex, repeatDateIndex+1)
+    // let newHabit = {
+    //   date: dateTitle,
+    //   tree: cSelected.includes('a tree'),
+    //   flower: cSelected.includes('a flower'),
+    //   grass: cSelected.includes('some grass'),
+    // }
+
+    // setHabitEventList(habitEventList => [slicedList, newHabit]);
+  //   console.log('before slice habitEventList', habitEventList);
+  // }
